@@ -10,17 +10,18 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@300;400;500&amp;family=Stack+Sans+Text:wght@400;500;600&amp;family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#8DB6EA}
+body{margin:0;background:#0A1324}
 html{scroll-behavior:smooth}
 *{box-sizing:border-box}
-a{color:#0B1A2E;text-decoration-thickness:1px;text-underline-offset:.18em}a:hover{color:#0B1A2E;text-decoration-thickness:2px}
-::selection{background:#0B1A2E;color:#8DB6EA}
-:focus-visible{outline:3px solid #0B1A2E;outline-offset:3px}
-.inv :focus-visible{outline-color:var(--bg)}
-input,textarea,button{caret-color:#0B1A2E}
-:root{--ease-out:cubic-bezier(.23,1,.32,1);--ease-io:cubic-bezier(.77,0,.175,1)}
+a{color:inherit;text-underline-offset:.2em}
+::selection{background:#6AA7FF;color:#0A1324}
+:focus-visible{outline:2px solid #6AA7FF;outline-offset:3px}
+.light :focus-visible,.acc :focus-visible{outline-color:#0B1A2E}
+:root{--ease-out:cubic-bezier(.23,1,.32,1)}
+.root{--ground:#0A1324;--panel:#111D33;--raised:#17253F;--text:#E8EEF8;--muted:#A9B8CE;--dark:#0B1A2E;--soft:#EEF2F7;--rxl:clamp(20px,2.4vw,32px);font-family:'Geist','Helvetica Neue',Arial,sans-serif;color:var(--text);background:var(--ground);line-height:1.55;font-size:18px}
+input,textarea{caret-color:#0B1A2E}
 
 /* frame */
 .wrap{max-width:1440px;margin:0 auto;padding-left:clamp(16px,3vw,40px);padding-right:clamp(16px,3vw,40px)}
@@ -28,112 +29,141 @@ input,textarea,button{caret-color:#0B1A2E}
 .c-l{grid-column:1 / span 6}
 .c-r{grid-column:8 / span 5}
 .c-r6{grid-column:7 / span 6}
-.c-all{grid-column:1 / -1}
-.sec{padding-top:clamp(96px,11vw,176px);padding-bottom:clamp(96px,11vw,176px)}
-.serif{font-family:'Stack Sans Headline','Helvetica Neue',Arial,sans-serif}
-.h2{font-family:'Stack Sans Headline','Helvetica Neue',Arial,sans-serif;font-weight:300;font-size:clamp(2.25rem,1.4rem + 3.4vw,4.25rem);line-height:1.02;letter-spacing:-0.03em;margin:0;text-wrap:balance}
-.lead{font-size:clamp(1.25rem,1.1rem + .6vw,1.5rem);line-height:1.5;margin:24px 0 0;max-width:34ch}
+.sec{padding-top:clamp(88px,10vw,160px);padding-bottom:clamp(88px,10vw,160px)}
+.card-sec{margin-left:clamp(8px,1.2vw,16px);margin-right:clamp(8px,1.2vw,16px);border-radius:var(--rxl);overflow:hidden}
+.light{background:#FFFFFF;color:#0B1A2E}
+.acc{background:var(--bg);color:#0A1324}
+.pnl{background:var(--panel)}
+.muted{color:var(--muted)}
+.light .muted,.acc .muted{color:#3B4A5E}
+.disp{font-family:'Geist','Helvetica Neue',Arial,sans-serif}
+.h1{font-weight:600;font-size:clamp(3rem,1rem + 7.4vw,7.75rem);line-height:1;letter-spacing:-0.045em;margin:0}
+.h2{font-weight:600;font-size:clamp(2.1rem,1.3rem + 3vw,3.9rem);line-height:1.04;letter-spacing:-0.035em;margin:0;text-wrap:balance}
+.h3{font-weight:600;font-size:clamp(1.5rem,1.1rem + 1.2vw,2.2rem);line-height:1.12;letter-spacing:-0.025em;margin:0}
+.lead{font-size:clamp(1.15rem,1.05rem + .5vw,1.4rem);line-height:1.5;margin:22px 0 0;max-width:36ch}
 .small{font-size:15px;line-height:1.5}
+.ac{color:var(--bg)}
 
 /* controls */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 28px;border:0;border-radius:0;background:#0B1A2E;color:var(--bg);font:inherit;font-family:'Stack Sans Text','Helvetica Neue',Arial,sans-serif;font-size:18px;font-weight:500;text-decoration:none;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 200ms ease}
-.btn:hover{color:var(--bg);text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 24px;border:0;border-radius:12px;background:var(--bg);color:#0A1324;font:inherit;font-size:17px;font-weight:600;text-decoration:none;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 200ms ease}
+.btn:hover{background:color-mix(in srgb,var(--bg) 82%,#FFFFFF);color:#0A1324}
 .btn:active{transform:scale(.97)}
 .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.btn-d{background:#0B1A2E;color:#FFFFFF}
+.btn-d:hover{background:#1B2B45;color:#FFFFFF}
 .btn .arr{transition:transform 200ms var(--ease-out)}
-.inv .btn{background:var(--bg);color:#0B1A2E}
-.inv .btn:hover{color:#0B1A2E}
-.tlink{font-size:20px;color:#0B1A2E}
+.tlink{font-size:17px;font-weight:500;color:var(--text)}
 .opt{font:inherit;text-align:left;border:0;border-radius:12px;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 200ms ease,color 200ms ease}
 .opt:active:not(:disabled){transform:scale(.97)}
 .opt:disabled{cursor:not-allowed}
 .field{font:inherit;font-size:17px;color:#0B1A2E;background:#FFFFFF;border:2px solid #C9D2DE;border-radius:12px;padding:12px 14px;min-height:52px;width:100%;transition:border-color 200ms ease,box-shadow 200ms ease}
-.field:focus{outline:none;border-color:#0B1A2E;box-shadow:0 0 0 4px rgba(11,26,46,.12)}
+.field:focus{outline:none;border-color:#0B1A2E;box-shadow:0 0 0 4px rgba(106,167,255,.35)}
 input::placeholder,textarea::placeholder{color:#5B6B80}
 .day{transition:background-color 150ms ease,color 150ms ease,transform 160ms var(--ease-out)}
 .day:active:not(:disabled){transform:scale(.94)}
-.navlink{color:#0B1A2E;text-decoration:none;font-size:17px}
-.navlink:hover{text-decoration:underline}
-.contact-mail{color:var(--bg);text-decoration:none;transition:color 200ms ease}
-.contact-mail:hover{color:#FFFFFF;text-decoration:none}
-.flink{color:#0B1A2E;text-decoration:none}
-.flink:hover{text-decoration:underline}
-
+.navlink{color:var(--muted);text-decoration:none;font-size:16px;font-weight:500;transition:color 150ms ease}
+.navlink:hover{color:var(--text)}
+.flink{color:var(--muted);text-decoration:none}
+.flink:hover{color:var(--text)}
+.mail{color:#0A1324;text-decoration:none;transition:opacity 200ms ease}
+.mail:hover{opacity:.75}
 input[type=range].rng{-webkit-appearance:none;appearance:none;height:8px;border-radius:999px;cursor:pointer;margin:0}
 input[type=range].rng::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:28px;height:28px;border-radius:50%;background:#0B1A2E;border:6px solid #FFFFFF;box-shadow:0 2px 8px rgba(11,26,46,.35);transition:transform 160ms var(--ease-out)}
 input[type=range].rng:active::-webkit-slider-thumb{transform:scale(1.12)}
 input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#0B1A2E;border:6px solid #FFFFFF}
 
 /* hero */
-.hero{padding-top:clamp(56px,7vw,112px);padding-bottom:clamp(80px,9vw,144px)}
-.browser{background:#FFFFFF;border-radius:14px;overflow:hidden}
+.hero{padding-top:clamp(48px,6vw,96px);padding-bottom:clamp(72px,8vw,128px)}
+.line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.line-in{display:inline-block}
+.slot{display:inline-flex;vertical-align:baseline;position:relative;width:2.7em;height:.74em;margin:0 .14em;border-radius:.2em;background:var(--raised);overflow:hidden;transform:translateY(.02em)}
+.fr{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:0 6%;font-weight:500;letter-spacing:0;line-height:1.25;font-size:clamp(12px,.45rem + .7vw,20px)}
+.fr2,.fr3{opacity:0}
+.bq{align-self:flex-end;background:var(--bg);color:#0A1324;padding:.35em .75em;border-radius:1em 1em .25em 1em;white-space:nowrap}
+.ba{align-self:flex-start;background:#FFFFFF;color:#0B1A2E;padding:.35em .75em;border-radius:1em 1em 1em .25em;white-space:nowrap}
+
+/* hero stage */
+.stage{position:relative;margin-top:clamp(56px,6vw,96px);padding-right:min(24%,320px)}
+.browser{background:#FFFFFF;border-radius:18px;overflow:hidden}
 .chrome{display:flex;align-items:center;justify-content:space-between;gap:12px;height:44px;padding:0 16px;background:#EEF2F7}
 .dots{display:flex;gap:7px}.dots span{width:11px;height:11px;border-radius:50%;background:#C9D2DE}
 .url{display:flex;align-items:center;gap:7px;background:#FFFFFF;color:#3B4A5E;border-radius:8px;padding:5px 14px;font-size:14px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.leadcard{position:absolute;right:clamp(-8px,-1vw,0px);top:30%;width:min(340px,40%);display:flex;gap:14px;align-items:flex-start;background:#FFFFFF;color:#0B1A2E;border-radius:14px;padding:18px;box-shadow:0 24px 48px -16px rgba(11,26,46,.45),0 2px 6px rgba(11,26,46,.12)}
-.frag{background:#FFFFFF;color:#0B1A2E;border-radius:14px;padding:clamp(18px,2vw,24px);font-size:16px;line-height:1.45}
-.inv .frag{background:#16263F;color:#FFFFFF}
-.chip-s{display:inline-flex;align-items:center;gap:6px;font-size:14px;border-radius:999px;padding:3px 11px;background:#EEF2F7;color:#0B1A2E}
-.inv .chip-s{background:#22344F;color:#FFFFFF}
-.av{flex:none;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:16px;background:var(--bg);color:#0B1A2E}
-.promise{padding-top:28px}
-.promise h3{font-family:'Stack Sans Headline','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:clamp(1.4rem,1rem + 1vw,1.9rem);line-height:1.15;letter-spacing:-0.02em;margin:0}
-.promise p{margin:10px 0 0;max-width:40ch}
-.h1{font-family:'Stack Sans Headline','Helvetica Neue',Arial,sans-serif;font-weight:300;font-size:clamp(3.2rem,1rem + 8.4vw,8.5rem);line-height:1;letter-spacing:-0.035em;margin:0}
-.line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
-.line-in{display:inline-block}
-.slot{display:inline-flex;vertical-align:baseline;position:relative;width:2.7em;height:.74em;margin:0 .14em;border-radius:.16em;background:#0B1A2E;overflow:hidden;transform:translateY(.02em)}
-.fr{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:0 6%;font-family:'Stack Sans Text','Helvetica Neue',Arial,sans-serif;letter-spacing:0;line-height:1.25;font-size:clamp(13px,.5rem + .75vw,22px)}
-.fr2,.fr3{opacity:0}
-.bq{align-self:flex-end;background:var(--bg);color:#0B1A2E;padding:.35em .7em;border-radius:.9em .9em .2em .9em;white-space:nowrap}
-.ba{align-self:flex-start;background:#FFFFFF;color:#0B1A2E;padding:.35em .7em;border-radius:.9em .9em .9em .2em;white-space:nowrap}
+.phone{position:absolute;right:0;top:7%;width:min(310px,27%);aspect-ratio:9 / 18.5;background:#05090F;border-radius:44px;padding:10px;box-shadow:0 40px 80px -30px rgba(0,0,0,.75)}
+.screen{position:relative;height:100%;background:#FFFFFF;border-radius:35px;overflow:hidden;display:flex;flex-direction:column;color:#0B1A2E}
+.notch{position:absolute;top:10px;left:50%;width:84px;height:22px;margin-left:-42px;border-radius:999px;background:#05090F;z-index:2}
+.ph-head{display:flex;align-items:center;gap:10px;padding:44px 16px 12px;background:#EEF2F7}
+.ph-msgs{flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;padding:14px;font-size:clamp(11px,.4rem + .45vw,14px);line-height:1.35}
+.m{max-width:84%;padding:8px 11px}
+.mb{align-self:flex-start;background:#EEF2F7;border-radius:14px 14px 14px 4px}
+.mu{align-self:flex-end;background:#0B1A2E;color:#FFFFFF;border-radius:14px 14px 4px 14px}
+.ph-in{margin:0 12px 14px;border-radius:999px;background:#EEF2F7;color:#5B6B80;padding:9px 14px;font-size:clamp(11px,.4rem + .4vw,13px)}
+.leadcard{position:absolute;left:clamp(16px,4vw,56px);bottom:-36px;width:min(360px,46%);display:flex;gap:14px;align-items:flex-start;background:#FFFFFF;color:#0B1A2E;border-radius:16px;padding:18px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.frag{background:#FFFFFF;color:#0B1A2E;border-radius:18px;padding:clamp(18px,2vw,24px);font-size:16px;line-height:1.45}
+.chip-s{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;border-radius:999px;padding:3px 11px;background:#EEF2F7;color:#0B1A2E}
+.av{flex:none;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:16px;background:#0B1A2E;color:#FFFFFF}
 
 /* process */
-.panel{position:relative;min-height:80svh;padding-top:6svh;padding-bottom:64px;display:flex;flex-direction:column}
-.verb{position:sticky;top:14svh;font-family:'Stack Sans Headline','Helvetica Neue',Arial,sans-serif;font-weight:300;font-size:clamp(6rem,2rem + 15vw,17rem);line-height:.9;letter-spacing:-0.04em;margin:0;text-align:center}
-.pbody{margin-top:auto;padding-top:14svh}
+.steps{display:flex;flex-direction:column;gap:12px;list-style:none;padding:0;margin:0}
+.panel{position:relative;min-height:78svh;padding-top:6svh;padding-bottom:clamp(32px,4vw,56px);display:flex;flex-direction:column}
+.verb{position:sticky;top:14svh;font-weight:600;font-size:clamp(5.5rem,2rem + 13vw,15rem);line-height:.9;letter-spacing:-0.06em;margin:0;text-align:center}
+.pbody{margin-top:auto;padding-top:12svh;width:100%}
 
 /* why bands */
-.band{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:24px;min-height:20vh;padding-top:28px;padding-bottom:28px;transition:background-color 300ms var(--ease-out),color 300ms var(--ease-out)}
-.band-s{font-family:'Stack Sans Headline','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:clamp(1.75rem,.9rem + 3vw,3.5rem);line-height:1.05;letter-spacing:-0.03em;margin:0}
-.sw{position:relative;width:2.1em;height:1.15em;border-radius:999px;border:0;padding:0;cursor:pointer;font-size:clamp(28px,2.6vw,44px);transition:background-color 250ms var(--ease-out)}
+.bands{display:flex;flex-direction:column;gap:10px}
+.band{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:24px;min-height:17vh;padding:24px clamp(20px,3vw,40px);border-radius:var(--rxl);transition:background-color 300ms var(--ease-out),color 300ms var(--ease-out)}
+.band-s{font-weight:600;font-size:clamp(1.6rem,.9rem + 2.6vw,3.2rem);line-height:1.08;letter-spacing:-0.035em;margin:0}
+.sw{position:relative;width:2.1em;height:1.15em;border-radius:999px;border:0;padding:0;cursor:pointer;font-size:clamp(28px,2.4vw,40px);transition:background-color 250ms var(--ease-out)}
 .sw::before{content:'';position:absolute;inset:-6px}
 .knob{position:absolute;top:.12em;left:.12em;width:.91em;height:.91em;border-radius:50%;transition:transform 250ms var(--ease-out),background-color 250ms ease}
 .sw[aria-checked="true"] .knob{transform:translateX(.95em)}
-.cons{font-size:18px;line-height:1.5;margin:12px 0 0;max-width:46ch}
+.cons{font-size:18px;line-height:1.5;margin:10px 0 0;max-width:46ch}
 
 /* faq */
-.qa{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:12px;padding-top:44px;padding-bottom:44px}
-.q{grid-column:1 / span 6;font-family:'Stack Sans Headline','Helvetica Neue',Arial,sans-serif;font-weight:500;font-size:clamp(1.6rem,1.1rem + 1.6vw,2.5rem);line-height:1.1;letter-spacing:-0.02em;margin:0}
-.a{grid-column:8 / span 5;font-size:19px;line-height:1.55;margin:0;max-width:42ch;padding-top:.35em}
+.qa{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px;row-gap:12px;padding-top:40px;padding-bottom:40px}
+.q{grid-column:1 / span 6;font-weight:600;font-size:clamp(1.4rem,1rem + 1.3vw,2.2rem);line-height:1.15;letter-spacing:-0.025em;margin:0}
+.a{grid-column:8 / span 5;font-size:18px;line-height:1.55;margin:0;max-width:42ch;padding-top:.3em;color:var(--muted)}
 
 /* pricing */
-.pblock{display:inline-block;background:#0B1A2E;color:var(--bg);padding:0 .15em;line-height:1;transition:background-color 200ms ease}
-.price-sent{font-family:'Stack Sans Headline','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:clamp(2.5rem,1rem + 5.6vw,6.5rem);line-height:1.02;letter-spacing:-0.035em;margin:0;text-wrap:balance}
+.pblock{display:inline-block;background:var(--bg);color:#0A1324;padding:0 .18em;border-radius:.14em;line-height:1.05}
+.price-sent{font-weight:600;font-size:clamp(2.4rem,1rem + 5vw,6rem);line-height:1.04;letter-spacing:-0.045em;margin:0;text-wrap:balance}
 
 /* compare */
 .compare:hover .knobc{transform:translate(-50%,-50%) scale(1.08)}
 .knobc{transition:transform 200ms var(--ease-out)}
 
+/* promises */
+.promise h3{font-weight:600;font-size:clamp(1.3rem,1rem + .9vw,1.75rem);line-height:1.18;letter-spacing:-0.02em;margin:0}
+.promise p{margin:10px 0 0;max-width:40ch;color:var(--muted)}
+
 /* footer */
-.mark{font-family:'Stack Sans Headline','Helvetica Neue',Arial,sans-serif;font-weight:500;font-size:28vw;line-height:.8;letter-spacing:-0.05em;white-space:nowrap;transform:translateY(24%);margin:0;color:#0B1A2E}
+.mark{font-weight:700;font-size:26vw;line-height:.8;letter-spacing:-0.07em;white-space:nowrap;transform:translateY(24%);margin:0;color:var(--raised)}
 
 /* motion */
 @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 @keyframes lineup{from{transform:translateY(105%)}to{transform:none}}
-@keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes pop{from{opacity:0;transform:translateY(6px) scale(.97)}to{opacity:1;transform:none}}
 @keyframes typing{0%,80%,100%{opacity:.25}40%{opacity:1}}
 @keyframes cyc{0%{opacity:0;transform:translateY(8px)}4%,30%{opacity:1;transform:none}34%,100%{opacity:0;transform:translateY(-8px)}}
+@keyframes m1{0%,2%{opacity:0;transform:translateY(8px)}6%,92%{opacity:1;transform:none}97%,100%{opacity:0}}
+@keyframes m2{0%,14%{opacity:0;transform:translateY(8px)}18%,92%{opacity:1;transform:none}97%,100%{opacity:0}}
+@keyframes m3{0%,28%{opacity:0;transform:translateY(8px)}32%,92%{opacity:1;transform:none}97%,100%{opacity:0}}
+@keyframes m4{0%,44%{opacity:0;transform:translateY(8px)}48%,92%{opacity:1;transform:none}97%,100%{opacity:0}}
+@keyframes m5{0%,56%{opacity:0;transform:translateY(8px)}60%,92%{opacity:1;transform:none}97%,100%{opacity:0}}
+@keyframes lead{0%,64%{opacity:0;transform:translateY(16px) scale(.97)}69%,92%{opacity:1;transform:none}97%,100%{opacity:0}}
 .fr1{opacity:1}
 @media (prefers-reduced-motion:no-preference){
 .line-in{animation:lineup 900ms var(--ease-out) both}
 .l2 .line-in{animation-delay:110ms}
 .after-h{animation:rise 700ms var(--ease-out) 420ms both}
 .after-h2{animation:rise 900ms var(--ease-out) 560ms both}
-.leadcard{animation:pop 500ms var(--ease-out) 1600ms both}
 .fr1,.fr2,.fr3{opacity:0;animation:cyc 12s var(--ease-out) infinite}
 .fr1{animation-delay:1s}.fr2{animation-delay:5s}.fr3{animation-delay:9s}
+.m1{animation:m1 14s var(--ease-out) 1s infinite both}
+.m2{animation:m2 14s var(--ease-out) 1s infinite both}
+.m3{animation:m3 14s var(--ease-out) 1s infinite both}
+.m4{animation:m4 14s var(--ease-out) 1s infinite both}
+.m5{animation:m5 14s var(--ease-out) 1s infinite both}
+.leadcard{animation:lead 14s var(--ease-out) 1s infinite both}
 .dot{animation:typing 1.2s ease-in-out infinite}
 .dot2{animation-delay:.2s}.dot3{animation-delay:.4s}
 .pop{animation:pop 260ms var(--ease-out) both}
@@ -149,42 +179,44 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 }
 @media (prefers-reduced-motion:reduce){*{transition-duration:0ms !important;scroll-behavior:auto !important}.fr2,.fr3{display:none}}
 
-/* phone and tablet */
+/* tablet and phone */
 @media (max-width:1000px){
 .navlinks{display:none !important}
 .c-l,.c-r,.c-r6{grid-column:1 / -1}
 .q,.a{grid-column:1 / -1}
 .a{padding-top:0}
+.qa{padding-top:24px;padding-bottom:24px}
 .fragw{grid-row:auto !important}
-.qa{padding-top:28px;padding-bottom:28px}
+.stage{padding-right:0}
+.phone{position:relative;right:auto;top:auto;width:min(290px,78%);margin:-48px auto 0}
+.leadcard{position:relative;left:auto;bottom:auto;width:auto;max-width:420px;margin:16px auto 0}
 }
 @media (max-width:640px){
-.hero{min-height:auto;padding-top:48px;padding-bottom:64px}
-.h1{font-size:13.5vw}
-.slot{display:flex;width:100%;height:84px;margin:.12em 0 .16em;border-radius:14px;font-size:inherit}
+.h1{font-size:13vw}
+.slot{display:flex;width:100%;height:84px;margin:.12em 0 .16em;border-radius:16px;font-size:inherit}
 .fr{font-size:15px;padding:0 16px}
-.band{min-height:132px}
+.band{min-height:120px}
 .band-s{font-size:7vw}
 .cons{font-size:16px}
-.verb{font-size:24vw}
-.price-sent{font-size:11vw}
+.verb{font-size:23vw;position:static;text-align:left;padding-left:clamp(16px,3vw,40px)}
+.panel{min-height:auto}
+.pbody{padding-top:28px}
+.price-sent{font-size:10.5vw}
 .btn{width:100%}
-.hide-sm{display:none}
 .mark{font-size:34vw}
-.leadcard{position:static;width:auto;margin-top:12px}
-.brand{font-size:16px !important;gap:10px !important}
-.hdr-btn{padding:0 14px !important;font-size:15px !important;min-height:44px !important}
 .chrome{height:36px}.url{font-size:12px}
+.brand{font-size:16px !important;gap:10px !important}
+.hdr-btn{padding:0 14px !important;font-size:15px !important;min-height:44px !important;width:auto !important}
 }
 </style>
 </helmet>
 
-<div style="--bg: {{accent}}; --ink: #0B1A2E; font-family: 'Stack Sans Text', 'Helvetica Neue', Arial, sans-serif; color: #0B1A2E; background: var(--bg); line-height: 1.55; font-size: 18px">
+<div class="root" style="--bg: {{accent}}">
 
 <!-- NAV -->
-<header style="position: sticky; top: 0; z-index: 20; background: var(--bg)">
+<header style="position: sticky; top: 0; z-index: 20; background: #0A1324">
 <div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 76px">
-<a href="#top" aria-label="Sterling Growth Systems home" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0B1A2E; font-size: 19px; font-weight: 600; letter-spacing: -0.01em; white-space: nowrap" class="brand"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 34 34"><rect width="34" height="34" rx="9" fill="#0B1A2E"></rect><rect x="8" y="20" width="6" height="6" rx="1.5" fill="#FFFFFF"></rect><rect x="14" y="14" width="6" height="12" rx="1.5" fill="#FFFFFF" opacity=".75"></rect><rect x="20" y="8" width="6" height="18" rx="1.5" style="fill: var(--bg)"></rect></svg>Sterling Growth Systems</a>
+<a href="#top" class="brand" aria-label="Sterling Growth Systems home" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #E8EEF8; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; white-space: nowrap"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 34 34"><rect width="34" height="34" rx="10" style="fill: var(--bg)"></rect><rect x="8" y="20" width="6" height="6" rx="1.5" fill="#0A1324" opacity=".55"></rect><rect x="14" y="14" width="6" height="12" rx="1.5" fill="#0A1324" opacity=".75"></rect><rect x="20" y="8" width="6" height="18" rx="1.5" fill="#0A1324"></rect></svg>Sterling Growth Systems</a>
 <nav class="navlinks" aria-label="Main" style="display: flex; gap: 32px">
 <a class="navlink" href="#services">Services</a>
 <a class="navlink" href="#process">Process</a>
@@ -192,21 +224,22 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 <a class="navlink" href="#pricing">Pricing</a>
 <a class="navlink" href="#faq">FAQ</a>
 </nav>
-<a class="btn hdr-btn" href="#contact" style="min-height: 48px; padding: 0 20px; font-size: 17px; width: auto; white-space: nowrap">Book a call</a>
+<a class="btn hdr-btn" href="#contact" style="min-height: 46px; padding: 0 20px; font-size: 16px; width: auto; white-space: nowrap">Book a call</a>
 </div>
 </header>
 
 <!-- HERO -->
 <section id="top" class="wrap hero">
 <h1 class="h1"><span class="line"><span class="line-in">Websites that</span></span><span class="line l2"><span class="line-in"><span class="slot" aria-hidden="true"><span class="fr fr1"><span class="bq">Are you open Saturday?</span><span class="ba">Yes, 8am to 2pm.</span></span><span class="fr fr2"><span class="bq">Do you do free quotes?</span><span class="ba">Always. Want to book one?</span></span><span class="fr fr3"><span class="bq">How much is a tune-up?</span><span class="ba">$89 this month.</span></span></span>answer back.</span></span></h1>
-<div class="after-h" style="margin-top: 40px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px 48px">
-<p style="margin: 0; font-size: clamp(1.25rem, 1.1rem + .6vw, 1.5rem); line-height: 1.45; max-width: 36ch">We design fast, modern websites and train an AI assistant on your business, so every visitor gets instant answers and every lead lands in your inbox.</p>
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px">
+<div class="after-h" style="margin-top: 36px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 28px 48px">
+<p class="muted" style="margin: 0; font-size: clamp(1.15rem, 1.05rem + .5vw, 1.4rem); line-height: 1.5; max-width: 40ch">We design fast, modern websites and train an AI assistant on your business, so every visitor gets instant answers and every lead lands in your inbox.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px">
 <a class="btn" href="#contact">Book a free strategy call <svg class="arr" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
 <a class="tlink" href="#pricing">See pricing</a>
 </div>
 </div>
-<div class="stage after-h2" style="position: relative; margin-top: clamp(56px, 6vw, 96px)">
+
+<div class="stage after-h2">
 <div data-ui="" class="browser">
 <div class="chrome" aria-hidden="true"><span class="dots"><span></span><span></span><span></span></span><span class="url"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>greenedgelandscape.com</span><span style="width: 42px"></span></div>
 <div aria-hidden="true" style="position: relative; aspect-ratio: 16 / 10; container-type: inline-size; overflow: hidden">
@@ -261,36 +294,53 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 </div>
 </div>
 </div>
+
+<div class="phone" data-ui="" role="img" aria-label="Sample conversation on a phone: a visitor asks the GreenEdge assistant about a free estimate and books Tuesday at 10am">
+<div class="screen">
+<span class="notch"></span>
+<div class="ph-head"><span style="flex: none; width: 32px; height: 32px; border-radius: 50%; background: #15803D; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"></path></svg></span><span style="min-width: 0; line-height: 1.2"><span style="display: block; font-weight: 600; font-size: 14px">GreenEdge Assistant</span><span style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: #3B4A5E"><span style="width: 7px; height: 7px; border-radius: 50%; background: #16A34A"></span>Online</span></span></div>
+<div class="ph-msgs">
+<span class="m mb m1">Hi! I'm the GreenEdge assistant. How can I help?</span>
+<span class="m mu m2">Do you do free estimates?</span>
+<span class="m mb m3">Always free. I have Tuesday at 10am or Thursday at 2pm.</span>
+<span class="m mu m4">Tuesday works.</span>
+<span class="m mb m5">You're booked for Tuesday at 10am. See you then!</span>
+</div>
+<div class="ph-in">Type a message...</div>
+</div>
+</div>
+
 <div class="leadcard" data-ui="" role="img" aria-label="Sample notification: new lead from your website, captured by your AI assistant">
-<span style="flex: none; width: 40px; height: 40px; border-radius: 10px; background: var(--bg); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></span>
-<span style="min-width: 0"><span style="display: block; font-weight: 600; font-size: 16px; line-height: 1.3">New lead from your website</span><span style="display: block; font-size: 15px; line-height: 1.4; color: #3B4A5E; margin-top: 2px">Jane D. wants a free estimate on Tuesday at 10:00 AM.</span><span style="display: flex; align-items: center; gap: 6px; font-size: 14px; color: #3B4A5E; margin-top: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #16A34A"></span>Captured by your AI assistant</span></span>
+<span style="flex: none; width: 40px; height: 40px; border-radius: 12px; background: var(--bg); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A1324" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></span>
+<span style="min-width: 0"><span style="display: block; font-weight: 600; font-size: 16px; line-height: 1.3">New lead from your website</span><span style="display: block; font-size: 15px; line-height: 1.4; color: #3B4A5E; margin-top: 2px">Free estimate booked for Tuesday at 10:00 AM.</span><span style="display: flex; align-items: center; gap: 6px; font-size: 14px; color: #3B4A5E; margin-top: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #16A34A"></span>Captured by your AI assistant</span></span>
 </div>
-<p class="small" style="margin: 14px 0 0; color: #1E3A5F">A sample client site with its assistant built in. The lead shown is illustrative.</p>
 </div>
-<ul class="after-h2 trust" style="list-style: none; padding: 0; margin: clamp(40px, 5vw, 64px) 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px 32px; font-size: 17px">
-<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Live in as little as 7 days</li>
-<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"></path></svg>Answers your visitors 24/7</li>
-<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18"></path></svg>100% custom design, no templates</li>
-<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-4"></path></svg>Fixed quote within [2 business days]</li>
+<p class="small muted" style="margin: clamp(56px, 5vw, 64px) 0 0">A sample client site and conversation, shown for illustration.</p>
+
+<ul class="after-h2" style="list-style: none; padding: 0; margin: clamp(32px, 4vw, 48px) 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
+<li style="display: flex; gap: 12px; align-items: center; background: var(--panel); border-radius: 14px; padding: 16px 18px; font-size: 16px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; stroke: var(--bg)"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Live in as little as 7 days</li>
+<li style="display: flex; gap: 12px; align-items: center; background: var(--panel); border-radius: 14px; padding: 16px 18px; font-size: 16px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; stroke: var(--bg)"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"></path></svg>Answers your visitors 24/7</li>
+<li style="display: flex; gap: 12px; align-items: center; background: var(--panel); border-radius: 14px; padding: 16px 18px; font-size: 16px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; stroke: var(--bg)"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18"></path></svg>100% custom design, no templates</li>
+<li style="display: flex; gap: 12px; align-items: center; background: var(--panel); border-radius: 14px; padding: 16px 18px; font-size: 16px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; stroke: var(--bg)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-4"></path></svg>Fixed quote within [2 business days]</li>
 </ul>
 </section>
 
 <!-- LIVE ASSISTANT -->
-<section id="assistant" style="background: #0B1A2E; color: var(--bg); scroll-margin-top: 76px" class="inv">
+<section id="assistant" class="card-sec pnl" style="scroll-margin-top: 84px">
 <div class="wrap sec g12" style="align-items: center">
 <div class="c-l rv">
-<h2 class="h2">Go on, ask it something.</h2>
-<p class="lead" style="color: #FFFFFF">This is a preview of the assistant we train on your business. Tap a question or type your own.</p>
-<p class="small" style="margin: 24px 0 0; color: #FFFFFF; max-width: 40ch">On your site it knows your services, hours and prices, and it hands tricky questions straight to you.</p>
+<h2 class="h2">Go on, <span class="ac">ask it something.</span></h2>
+<p class="lead">This is a preview of the assistant we train on your business. Tap a question or type your own.</p>
+<p class="small muted" style="margin: 22px 0 0; max-width: 40ch">On your site it knows your services, hours and prices, and it hands tricky questions straight to you.</p>
 </div>
 
-<div class="c-r6 rv2" data-ui="" style="background: #FFFFFF; color: #0B1A2E; border-radius: 16px; overflow: hidden; font-family: 'Stack Sans Text', 'Helvetica Neue', Arial, sans-serif">
+<div class="c-r6 rv2" data-ui="" style="background: #FFFFFF; color: #0B1A2E; border-radius: 20px; overflow: hidden">
 <div style="display: flex; align-items: center; gap: 12px; padding: 18px 20px; background: #EEF2F7">
-<span style="width: 40px; height: 40px; border-radius: 50%; background: var(--bg); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"></path></svg></span>
-<div style="flex: 1; min-width: 0"><div style="font-weight: 600; font-size: 18px; line-height: 1.2">Sterling Assistant</div><div style="font-size: 15px; color: #3B4A5E">Live preview</div></div>
-<span style="display: flex; align-items: center; gap: 8px; font-size: 15px; color: #14532D"><span style="width: 9px; height: 9px; border-radius: 50%; background: #16A34A"></span>Online</span>
+<span style="width: 40px; height: 40px; border-radius: 50%; background: var(--bg); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A1324" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"></path></svg></span>
+<div style="flex: 1; min-width: 0"><div style="font-weight: 600; font-size: 17px; line-height: 1.2">Sterling Assistant</div><div style="font-size: 14px; color: #3B4A5E">Live preview</div></div>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #14532D"><span style="width: 9px; height: 9px; border-radius: 50%; background: #16A34A"></span>Online</span>
 </div>
-<div aria-live="polite" aria-label="Chat messages" style="height: 320px; overflow-y: auto; padding: 20px; display: flex; flex-direction: column-reverse; gap: 10px; font-size: 17px; line-height: 1.45">
+<div aria-live="polite" aria-label="Chat messages" style="height: 320px; overflow-y: auto; padding: 20px; display: flex; flex-direction: column-reverse; gap: 10px; font-size: 16px; line-height: 1.45">
 <sc-if value="{{typing}}" hint-placeholder-val="{{ false }}">
 <div aria-label="Assistant is typing" style="align-self: flex-start; background: #EEF2F7; padding: 14px 16px; border-radius: 16px 16px 16px 4px; display: flex; gap: 5px">
 <span class="dot" style="width: 7px; height: 7px; border-radius: 50%; background: #3B4A5E"></span>
@@ -309,24 +359,24 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 </div>
 <div style="padding: 0 20px 14px; display: flex; flex-wrap: wrap; gap: 8px">
 <sc-for list="{{chips}}" as="c" hint-placeholder-count="3">
-<button class="opt" type="button" onClick="{{c.ask}}" disabled="{{typing}}" style="font-size: 16px; color: #0B1A2E; background: color-mix(in srgb, var(--bg) 22%, #FFFFFF); border-radius: 999px; padding: 9px 15px; min-height: 44px">{{c.label}}</button>
+<button class="opt" type="button" onClick="{{c.ask}}" disabled="{{typing}}" style="font-size: 15px; font-weight: 500; color: #0B1A2E; background: color-mix(in srgb, var(--bg) 22%, #FFFFFF); border-radius: 999px; padding: 9px 15px; min-height: 44px">{{c.label}}</button>
 </sc-for>
 </div>
 <div style="display: flex; gap: 10px; padding: 14px 20px 20px; background: #EEF2F7">
 <input class="field" type="text" aria-label="Ask the assistant a question" placeholder="Type a question..." value="{{draft}}" onChange="{{setDraft}}" onKeyDown="{{onKey}}" style="flex: 1; min-width: 0">
-<button class="btn" type="button" aria-label="Send question" onClick="{{send}}" disabled="{{typing}}" style="flex: none; width: 52px; min-height: 52px; padding: 0; border-radius: 12px; background: #0B1A2E; color: var(--bg)"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
+<button class="btn btn-d" type="button" aria-label="Send question" onClick="{{send}}" disabled="{{typing}}" style="flex: none; width: 52px; min-height: 52px; padding: 0"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg></button>
 </div>
 </div>
 </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" style="background: #FFFFFF; scroll-margin-top: 76px">
+<section id="services" style="scroll-margin-top: 84px">
 <div class="wrap sec g12">
 <div class="c-l rv">
 <h2 class="h2">Two things, done exceptionally well.</h2>
-<p class="lead">A website that earns trust in seconds, and an assistant that knows your business inside out. Together they turn more visitors into customers.</p>
-<div data-ui="" class="browser" style="margin-top: 48px; background: #EEF2F7">
+<p class="lead muted">A website that earns trust in seconds, and an assistant that knows your business inside out. Together they turn more visitors into customers.</p>
+<div data-ui="" class="browser" style="margin-top: 48px">
 <div class="chrome" aria-hidden="true"><span class="dots"><span></span><span></span><span></span></span><span class="url">summitairhvac.com</span><span style="width: 42px"></span></div>
 <div aria-hidden="true" style="position: relative; aspect-ratio: 16 / 10; container-type: inline-size; overflow: hidden">
 <div style="position: absolute; inset: 0; background: #FFFFFF; font-family: 'Inter', sans-serif; color: #0B1F3A; display: flex; flex-direction: column; overflow: hidden">
@@ -367,26 +417,26 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 </div>
 </div>
 </div>
-<p class="small" style="margin: 12px 0 0; color: #3B4A5E">A sample redesign for a heating and cooling company, shown for illustration.</p>
+<p class="small muted" style="margin: 12px 0 0">A sample redesign for a heating and cooling company, shown for illustration.</p>
 </div>
-<div class="c-r6" style="display: flex; flex-direction: column; gap: 56px">
-<article class="rv2">
-<h3 class="serif" style="font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.6rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; margin: 0">Custom websites</h3>
-<p style="margin: 12px 0 0; max-width: 46ch">Fast, polished sites designed around your business, so visitors know right away what you offer and how to reach you.</p>
-<ul style="list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-direction: column; gap: 10px">
-<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 5px"><path d="M20 6 9 17l-5-5"></path></svg>Designed from scratch, never a cookie-cutter template</li>
-<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 5px"><path d="M20 6 9 17l-5-5"></path></svg>Mobile-first, accessible and lightning quick</li>
-<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 5px"><path d="M20 6 9 17l-5-5"></path></svg>Search-ready from day one</li>
-<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 5px"><path d="M20 6 9 17l-5-5"></path></svg>Monthly reports on traffic and conversions</li>
+<div class="c-r6" style="display: flex; flex-direction: column; gap: 16px">
+<article class="rv2" style="background: var(--panel); border-radius: var(--rxl); padding: clamp(24px, 3vw, 40px)">
+<h3 class="h3">Custom websites</h3>
+<p class="muted" style="margin: 12px 0 0; max-width: 46ch">Fast, polished sites designed around your business, so visitors know right away what you offer and how to reach you.</p>
+<ul style="list-style: none; padding: 0; margin: 22px 0 0; display: flex; flex-direction: column; gap: 10px">
+<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: var(--bg)"><path d="M20 6 9 17l-5-5"></path></svg>Designed from scratch, never a cookie-cutter template</li>
+<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: var(--bg)"><path d="M20 6 9 17l-5-5"></path></svg>Mobile-first, accessible and lightning quick</li>
+<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: var(--bg)"><path d="M20 6 9 17l-5-5"></path></svg>Search-ready from day one</li>
+<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: var(--bg)"><path d="M20 6 9 17l-5-5"></path></svg>Monthly reports on traffic and conversions</li>
 </ul>
 </article>
-<article class="rv3" style="background: var(--bg); padding: clamp(24px, 3vw, 40px)">
-<h3 class="serif" style="font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.6rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; margin: 0">AI chat assistant</h3>
+<article class="rv3 acc" style="border-radius: var(--rxl); padding: clamp(24px, 3vw, 40px)">
+<h3 class="h3">AI chat assistant</h3>
 <p style="margin: 12px 0 0; max-width: 46ch">A friendly assistant on your site that answers questions about your services, hours and prices at any hour.</p>
-<ul style="list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-direction: column; gap: 10px">
-<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 5px"><path d="M20 6 9 17l-5-5"></path></svg>Trained on your own business information</li>
-<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 5px"><path d="M20 6 9 17l-5-5"></path></svg>Captures leads and books appointments</li>
-<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 5px"><path d="M20 6 9 17l-5-5"></path></svg>Hands tricky questions straight to you</li>
+<ul style="list-style: none; padding: 0; margin: 22px 0 0; display: flex; flex-direction: column; gap: 10px">
+<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: #0A1324"><path d="M20 6 9 17l-5-5"></path></svg>Trained on your own business information</li>
+<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: #0A1324"><path d="M20 6 9 17l-5-5"></path></svg>Captures leads and books appointments</li>
+<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: #0A1324"><path d="M20 6 9 17l-5-5"></path></svg>Hands tricky questions straight to you</li>
 </ul>
 </article>
 </div>
@@ -394,98 +444,87 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 </section>
 
 <!-- PROCESS -->
-<section id="process" style="scroll-margin-top: 76px">
-<div class="wrap g12" style="padding-top: clamp(96px, 11vw, 176px); padding-bottom: 24px">
-<div class="c-l rv">
-<h2 class="h2">From first call to live site in as little as 7 days.</h2>
-</div>
-<div class="c-r rv2" style="align-self: end">
-<p style="margin: 0">No tech headaches and no endless back and forth. We handle the heavy lifting and keep you in the loop the whole way.</p>
-</div>
+<section id="process" style="scroll-margin-top: 84px">
+<div class="wrap g12" style="padding-top: clamp(32px, 4vw, 64px); padding-bottom: 40px">
+<div class="c-l rv"><h2 class="h2">From first call to live site in as little as 7 days.</h2></div>
+<div class="c-r rv2" style="align-self: end"><p class="muted" style="margin: 0">No tech headaches and no endless back and forth. We handle the heavy lifting and keep you in the loop the whole way.</p></div>
 </div>
 
-<ol style="list-style: none; padding: 0; margin: 0">
-<li class="panel" style="background: var(--bg)">
-<p class="verb" aria-hidden="true">Talk</p>
-<div class="wrap pbody g12" style="width: 100%">
+<ol class="steps">
+<li class="panel card-sec pnl">
+<p class="verb ac" aria-hidden="true">Talk</p>
+<div class="wrap pbody g12">
 <div class="c-l">
-<p style="margin: 0; font-size: 17px">Day 1</p>
-<h3 class="serif" style="font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.6rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; margin: 6px 0 0">Free strategy call</h3>
-<p style="margin: 12px 0 0; max-width: 44ch">We spend [20] minutes getting to know your business, your customers and the questions they ask most.</p>
+<p class="muted" style="margin: 0; font-size: 16px">Day 1</p>
+<h3 class="h3" style="margin-top: 6px">Free strategy call</h3>
+<p class="muted" style="margin: 12px 0 0; max-width: 44ch">We spend [20] minutes getting to know your business, your customers and the questions they ask most.</p>
 </div>
 <div class="c-l" style="margin-top: 8px">
 <p style="margin: 0; font-weight: 600">You walk away with</p>
-<ul style="margin: 8px 0 0; padding-left: 1.1em">
-<li>A clear plan for your site</li>
-<li>A fixed quote within [2 business days]</li>
-</ul>
+<ul class="muted" style="margin: 8px 0 0; padding-left: 1.1em"><li>A clear plan for your site</li><li>A fixed quote within [2 business days]</li></ul>
 </div>
 <div class="c-r6 fragw rv2" style="grid-row: 1 / span 2; align-self: end">
 <div class="frag" data-ui="" role="img" aria-label="Sample calendar invite: free strategy call with Sterling, Tuesday at 10:30 AM Central Time, [20] minutes, by video call">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span class="chip-s">Calendar invite</span><span style="font-size: 14px; color: #3B4A5E">Sample</span></div>
-<div class="serif" style="font-size: clamp(22px, 2vw, 28px); font-weight: 400; line-height: 1.2; margin-top: 16px">Free strategy call with Sterling</div>
+<div style="font-size: clamp(20px, 1.8vw, 26px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin-top: 16px">Free strategy call with Sterling</div>
 <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 14px; font-size: 15px; color: #3B4A5E">
 <span style="display: flex; gap: 10px; align-items: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Tue, 10:30 AM CT · [20] minutes</span>
 <span style="display: flex; gap: 10px; align-items: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"></rect><path d="m16 10 6-3v10l-6-3"></path></svg>Video call, link in your invite</span>
 </div>
-<div style="display: flex; align-items: center; gap: 12px; margin-top: 18px; padding-top: 4px">
-<span style="display: flex"><span class="av" style="width: 36px; height: 36px; font-size: 14px">MB</span><span class="av" style="width: 36px; height: 36px; font-size: 14px; margin-left: 6px; background: #0B1A2E; color: #FFFFFF">HS</span></span>
+<div style="display: flex; align-items: center; gap: 12px; margin-top: 18px">
+<span style="display: flex; gap: 6px"><span class="av" style="width: 36px; height: 36px; font-size: 14px; background: var(--bg); color: #0A1324">MB</span><span class="av" style="width: 36px; height: 36px; font-size: 14px">HS</span></span>
 <span style="font-size: 15px">Max Bis and Hyland Sterling</span>
 </div>
-<div style="display: flex; gap: 8px; margin-top: 18px; font-size: 15px; font-weight: 500"><span style="background: #0B1A2E; color: #FFFFFF; border-radius: 8px; padding: 8px 16px">Accept</span><span style="background: #EEF2F7; border-radius: 8px; padding: 8px 16px">Reschedule</span></div>
+<div style="display: flex; gap: 8px; margin-top: 18px; font-size: 15px; font-weight: 500"><span style="background: #0B1A2E; color: #FFFFFF; border-radius: 10px; padding: 8px 16px">Accept</span><span style="background: #EEF2F7; border-radius: 10px; padding: 8px 16px">Reschedule</span></div>
 </div>
 </div>
 </div>
 </li>
-<li class="panel" style="background: #FFFFFF">
+
+<li class="panel card-sec light">
 <p class="verb" aria-hidden="true">Build</p>
-<div class="wrap pbody g12" style="width: 100%">
+<div class="wrap pbody g12">
 <div class="c-l">
-<p style="margin: 0; font-size: 17px">Days 2 to 6</p>
-<h3 class="serif" style="font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.6rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; margin: 6px 0 0">Design and setup</h3>
-<p style="margin: 12px 0 0; max-width: 44ch">We design your site, sharpen the wording and train your AI assistant. We keep refining it until you're completely happy.</p>
+<p class="muted" style="margin: 0; font-size: 16px">Days 2 to 6</p>
+<h3 class="h3" style="margin-top: 6px">Design and setup</h3>
+<p class="muted" style="margin: 12px 0 0; max-width: 44ch">We design your site, sharpen the wording and train your AI assistant. We keep refining it until you're completely happy.</p>
 </div>
 <div class="c-l" style="margin-top: 8px">
 <p style="margin: 0; font-weight: 600">You walk away with</p>
-<ul style="margin: 8px 0 0; padding-left: 1.1em">
-<li>A private preview link to review</li>
-<li>Revisions until you love it</li>
-</ul>
+<ul class="muted" style="margin: 8px 0 0; padding-left: 1.1em"><li>A private preview link to review</li><li>Revisions until you love it</li></ul>
 </div>
 <div class="c-r6 fragw rv2" style="grid-row: 1 / span 2; align-self: end">
 <div class="frag" data-ui="" role="img" aria-label="Sample preview checklist: homepage design, service pages and assistant training done, waiting for your feedback" style="background: #EEF2F7">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span class="chip-s" style="background: #FFFFFF">Preview ready</span><span style="font-size: 14px; color: #3B4A5E">Sample</span></div>
 <div class="url" style="margin-top: 16px; display: inline-flex">preview.sterlinggrowthsystems.com/your-site</div>
 <ul style="list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-direction: column; gap: 10px">
-<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg> Homepage designed around your business</li>
-<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg> Service pages, written in plain English</li>
-<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 3px"><path d="M20 6 9 17l-5-5"></path></svg> Assistant trained on your services, hours and prices</li>
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: #16A34A"><path d="M20 6 9 17l-5-5"></path></svg>Homepage designed around your business</li>
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: #16A34A"><path d="M20 6 9 17l-5-5"></path></svg>Service pages, written in plain English</li>
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: #16A34A"><path d="M20 6 9 17l-5-5"></path></svg>Assistant trained on your services, hours and prices</li>
 <li style="display: flex; gap: 10px"><span style="flex: none; width: 18px; height: 18px; margin-top: 3px; border-radius: 50%; background: var(--bg)"></span>Waiting for your feedback</li>
 </ul>
 </div>
 </div>
 </div>
 </li>
-<li class="panel inv" style="background: #0B1A2E; color: var(--bg)">
+
+<li class="panel card-sec acc">
 <p class="verb" aria-hidden="true">Launch</p>
-<div class="wrap pbody g12" style="width: 100%">
+<div class="wrap pbody g12">
 <div class="c-l">
-<p style="margin: 0; font-size: 17px; color: #FFFFFF">Day 7</p>
-<h3 class="serif" style="font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.6rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; margin: 6px 0 0">Go live</h3>
-<p style="margin: 12px 0 0; max-width: 44ch; color: #FFFFFF">Once you're happy, we launch. Your assistant starts answering questions straight away.</p>
+<p class="muted" style="margin: 0; font-size: 16px">Day 7</p>
+<h3 class="h3" style="margin-top: 6px">Go live</h3>
+<p style="margin: 12px 0 0; max-width: 44ch">Once you're happy, we launch. Your assistant starts answering questions straight away.</p>
 </div>
-<div class="c-l" style="color: #FFFFFF; margin-top: 8px">
+<div class="c-l" style="margin-top: 8px">
 <p style="margin: 0; font-weight: 600">You walk away with</p>
-<ul style="margin: 8px 0 0; padding-left: 1.1em">
-<li>A live website and AI assistant</li>
-<li>A quick walkthrough of how it all works</li>
-</ul>
+<ul style="margin: 8px 0 0; padding-left: 1.1em"><li>A live website and AI assistant</li><li>A quick walkthrough of how it all works</li></ul>
 </div>
 <div class="c-r6 fragw rv2" style="grid-row: 1 / span 2; align-self: end">
-<div class="frag" data-ui="" role="img" aria-label="Sample launch status: website live, AI assistant online, lead alerts sent to your inbox">
-<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span class="chip-s"><span style="width: 8px; height: 8px; border-radius: 50%; background: #4ADE80"></span>Live</span><span style="font-size: 14px; color: #B8C4D4">Sample</span></div>
-<div class="serif" style="font-size: clamp(22px, 2vw, 28px); font-weight: 400; line-height: 1.2; margin-top: 16px">yourbusiness.com is live</div>
-<div style="display: flex; flex-direction: column; gap: 2px; margin-top: 16px; font-size: 15px">
+<div class="frag" data-ui="" role="img" aria-label="Sample launch status: website live, AI assistant online, lead alerts sent to your inbox" style="background: #0B1A2E; color: #FFFFFF">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span class="chip-s" style="background: #22344F; color: #FFFFFF"><span style="width: 8px; height: 8px; border-radius: 50%; background: #4ADE80"></span>Live</span><span style="font-size: 14px; color: #B8C4D4">Sample</span></div>
+<div style="font-size: clamp(20px, 1.8vw, 26px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin-top: 16px">yourbusiness.com is live</div>
+<div style="display: flex; flex-direction: column; margin-top: 12px; font-size: 15px">
 <span style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0"><span style="color: #B8C4D4">Website</span><span>Live</span></span>
 <span style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0"><span style="color: #B8C4D4">AI assistant</span><span>Online, answering questions</span></span>
 <span style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0"><span style="color: #B8C4D4">Lead alerts</span><span>Sent to your inbox</span></span>
@@ -494,31 +533,29 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 </div>
 </div>
 </li>
-<li class="panel" style="background: #EEF2F7">
-<p class="verb" aria-hidden="true">Care</p>
-<div class="wrap pbody g12" style="width: 100%">
+
+<li class="panel card-sec pnl">
+<p class="verb ac" aria-hidden="true">Care</p>
+<div class="wrap pbody g12">
 <div class="c-l">
-<p style="margin: 0; font-size: 17px">Ongoing</p>
-<h3 class="serif" style="font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.6rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; margin: 6px 0 0">Ongoing care</h3>
-<p style="margin: 12px 0 0; max-width: 44ch">We keep your site fast, secure and up to date, send you a monthly growth report, and fine-tune your assistant based on what real visitors ask.</p>
+<p class="muted" style="margin: 0; font-size: 16px">Ongoing</p>
+<h3 class="h3" style="margin-top: 6px">Ongoing care</h3>
+<p class="muted" style="margin: 12px 0 0; max-width: 44ch">We keep your site fast, secure and up to date, send you a monthly growth report, and fine-tune your assistant based on what real visitors ask.</p>
 </div>
 <div class="c-l" style="margin-top: 8px">
 <p style="margin: 0; font-weight: 600">You walk away with</p>
-<ul style="margin: 8px 0 0; padding-left: 1.1em">
-<li>Monthly reports on clicks, conversions and more</li>
-<li>A real person to call when you need help</li>
-</ul>
+<ul class="muted" style="margin: 8px 0 0; padding-left: 1.1em"><li>Monthly reports on clicks, conversions and more</li><li>A real person to call when you need help</li></ul>
 </div>
 <div class="c-r6 fragw rv2" style="grid-row: 1 / span 2; align-self: end">
 <div class="frag" data-ui="" role="img" aria-label="Sample email: your monthly growth report, with leads rising each week and one recommendation">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><span class="chip-s">Inbox</span><span style="font-size: 14px; color: #3B4A5E">Sample</span></div>
 <div style="font-size: 15px; color: #3B4A5E; margin-top: 16px">From: Sterling Growth Systems</div>
-<div class="serif" style="font-size: clamp(22px, 2vw, 28px); font-weight: 400; line-height: 1.2; margin-top: 4px">Your monthly growth report</div>
+<div style="font-size: clamp(20px, 1.8vw, 26px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin-top: 4px">Your monthly growth report</div>
 <div aria-hidden="true" style="display: flex; align-items: flex-end; gap: 10px; height: 72px; margin-top: 18px">
-<span style="flex: 1; height: 40%; border-radius: 5px 5px 0 0; background: color-mix(in srgb, var(--bg) 50%, #EEF2F7)"></span>
-<span style="flex: 1; height: 55%; border-radius: 5px 5px 0 0; background: color-mix(in srgb, var(--bg) 70%, #EEF2F7)"></span>
-<span style="flex: 1; height: 75%; border-radius: 5px 5px 0 0; background: var(--bg)"></span>
-<span style="flex: 1; height: 100%; border-radius: 5px 5px 0 0; background: #0B1A2E"></span>
+<span style="flex: 1; height: 40%; border-radius: 6px 6px 0 0; background: color-mix(in srgb, var(--bg) 40%, #EEF2F7)"></span>
+<span style="flex: 1; height: 55%; border-radius: 6px 6px 0 0; background: color-mix(in srgb, var(--bg) 65%, #EEF2F7)"></span>
+<span style="flex: 1; height: 75%; border-radius: 6px 6px 0 0; background: var(--bg)"></span>
+<span style="flex: 1; height: 100%; border-radius: 6px 6px 0 0; background: #0B1A2E"></span>
 </div>
 <p style="margin: 14px 0 0; font-size: 15px; background: #EEF2F7; border-radius: 10px; padding: 10px 12px"><span style="font-weight: 600">Next step:</span> add weekend hours to your homepage and assistant.</p>
 </div>
@@ -527,50 +564,50 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 </li>
 </ol>
 
-<div class="wrap" style="padding-top: 64px; padding-bottom: 64px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px">
-<p class="serif" style="margin: 0; font-size: clamp(1.6rem, 1.1rem + 1.6vw, 2.5rem); line-height: 1.15; letter-spacing: -0.02em">Ready when you are. Step one takes about [20] minutes and costs nothing.</p>
+<div class="wrap" style="padding-top: 56px; padding-bottom: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px">
+<p style="margin: 0; font-size: clamp(1.4rem, 1rem + 1.3vw, 2.2rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.2">Ready when you are. <span class="muted">Step one takes about [20] minutes and costs nothing.</span></p>
 <a class="btn" href="#contact">Book your free call <svg class="arr" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
 </div>
 </section>
 
 <!-- WHY: SENTENCES WITH SWITCHES -->
-<section id="why" style="background: var(--bg); scroll-margin-top: 76px">
-<div class="wrap" style="padding-top: clamp(64px, 8vw, 120px); padding-bottom: 40px">
+<section id="why" style="scroll-margin-top: 84px">
+<div class="wrap" style="padding-top: clamp(80px, 9vw, 144px)">
 <h2 class="h2 rv" style="max-width: 16ch">Built to bring you more customers.</h2>
-<p class="small rv2" style="margin: 16px 0 0; font-size: 17px">Flip a switch to see what each one means for you.</p>
-</div>
+<p class="small muted rv2" style="margin: 14px 0 36px; font-size: 17px">Flip a switch to see what each one means for you.</p>
+<div class="bands">
 <sc-for list="{{whys}}" as="w" hint-placeholder-count="4">
-<div style="{{w.bandStyle}}">
-<div class="wrap band">
+<div class="band" style="{{w.bandStyle}}">
 <div>
 <p class="band-s">{{w.title}}</p>
 <sc-if value="{{w.on}}" hint-placeholder-val="{{ false }}"><p class="cons pop">{{w.desc}}</p></sc-if>
 </div>
 <button class="sw" type="button" role="switch" aria-checked="{{w.on}}" aria-label="{{w.title}}" onClick="{{w.toggle}}" data-ui="" style="{{w.swStyle}}"><span class="knob" style="{{w.knobStyle}}"></span></button>
 </div>
-</div>
 </sc-for>
+</div>
+</div>
 </section>
 
 <!-- WORK: BEFORE / AFTER -->
-<section id="work" style="background: #FFFFFF; scroll-margin-top: 76px">
+<section id="work" style="scroll-margin-top: 84px">
 <div class="wrap sec">
 <div class="g12" style="align-items: end">
 <div class="c-l rv">
 <h2 class="h2">See the difference a rebuild makes.</h2>
-<p class="lead">Drag the slider to see how we turn outdated, confusing websites into clean, modern sites that bring in customers.</p>
+<p class="lead muted">Drag the slider to see how we turn outdated, confusing websites into clean, modern sites that bring in customers.</p>
 </div>
 <div class="c-r rv2" style="justify-self: end">
-<div role="group" aria-label="Choose a project" style="display: flex; flex-wrap: wrap; gap: 8px">
+<div role="group" aria-label="Choose a project" style="display: flex; flex-wrap: wrap; gap: 6px; background: var(--panel); border-radius: 14px; padding: 6px">
 <sc-for list="{{projectTabs}}" as="t" hint-placeholder-count="2">
-<button class="opt" type="button" onClick="{{t.pick}}" aria-pressed="{{t.selected}}" style="font-size: 19px; padding: 12px 22px; min-height: 52px; {{t.style}}">{{t.label}}</button>
+<button class="opt" type="button" onClick="{{t.pick}}" aria-pressed="{{t.selected}}" style="font-size: 17px; font-weight: 500; padding: 10px 22px; min-height: 48px; border-radius: 10px; {{t.style}}">{{t.label}}</button>
 </sc-for>
 </div>
 </div>
 </div>
 
 <div class="rv3" style="margin-top: 56px">
-<div class="compare" style="position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: #FFFFFF; user-select: none; container-type: inline-size; border-radius: 4px; outline: 2px solid #0B1A2E; outline-offset: 0">
+<div class="compare" style="position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: #FFFFFF; user-select: none; container-type: inline-size; border-radius: 20px">
 
 <!-- AFTER layer -->
 <div aria-hidden="true" style="position: absolute; inset: 0">
@@ -709,102 +746,102 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 </div>
 
 <!-- Labels + handle -->
-<span style="position: absolute; top: 14px; left: 14px; z-index: 3; font-family: 'Stack Sans Text', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; color: #FFFFFF; background: #0B1A2E; padding: 4px 12px">Before</span>
-<span style="position: absolute; top: 14px; right: 14px; z-index: 3; font-family: 'Stack Sans Text', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; color: #0B1A2E; background: var(--bg); padding: 4px 12px">After</span>
+<span style="position: absolute; top: 14px; left: 14px; z-index: 3; font-size: 15px; font-weight: 600; color: #FFFFFF; background: #0B1A2E; padding: 5px 12px; border-radius: 8px">Before</span>
+<span style="position: absolute; top: 14px; right: 14px; z-index: 3; font-size: 15px; font-weight: 600; color: #0A1324; background: var(--bg); padding: 5px 12px; border-radius: 8px">After</span>
 <div aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: {{split}}%; width: 4px; margin-left: -2px; background: #0B1A2E; z-index: 3; pointer-events: none">
-<span class="knobc" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 56px; height: 56px; border-radius: 50%; background: #0B1A2E; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(11,26,46,.35)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--bg)"><path d="m9 6-6 6 6 6"></path><path d="m15 6 6 6-6 6"></path></svg></span>
+<span class="knobc" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 56px; height: 56px; border-radius: 50%; background: #0B1A2E; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,.4)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--bg)"><path d="m9 6-6 6 6 6"></path><path d="m15 6 6 6-6 6"></path></svg></span>
 </div>
 <input type="range" min="0" max="100" value="{{split}}" onChange="{{setSplit}}" aria-label="Drag to compare the old and new website" style="position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; z-index: 4">
 </div>
-<p class="small" style="margin: 16px 0 0">Drag or use your arrow keys to compare. Sample redesigns shown for illustration.</p>
+<p class="small muted" style="margin: 16px 0 0">Drag or use your arrow keys to compare. Sample redesigns shown for illustration.</p>
 </div>
 </div>
 </section>
 
 <!-- COMMITMENTS -->
-<section id="commitments" class="inv" style="background: #0B1A2E; color: #FFFFFF; scroll-margin-top: 76px">
+<section id="commitments" class="card-sec pnl" style="scroll-margin-top: 84px">
 <div class="wrap sec">
 <div class="g12" style="align-items: end">
-<div class="c-l rv"><h2 class="h2" style="color: var(--bg)">What you can count on.</h2></div>
-<div class="c-r rv2"><p style="margin: 0">No jargon, no surprises and no disappearing act after launch. These are the promises behind every Sterling site.</p></div>
+<div class="c-l rv"><h2 class="h2">What you can <span class="ac">count on.</span></h2></div>
+<div class="c-r rv2"><p class="muted" style="margin: 0">No jargon, no surprises and no disappearing act after launch. These are the promises behind every Sterling site.</p></div>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 40px 48px; margin-top: clamp(48px, 6vw, 88px)">
-<div class="promise rv"><h3>A fixed quote, up front.</h3><p>After your free call you get a fixed quote within [2 business days], so you know the price before any work starts.</p></div>
-<div class="promise rv2"><h3>Revisions until you love it.</h3><p>You review everything on a private preview link, and we keep refining it until you're completely happy.</p></div>
-<div class="promise rv3"><h3>An assistant that won't make things up.</h3><p>If it doesn't know the answer, it says so, takes the visitor's details and sends the question straight to you.</p></div>
-<div class="promise rv"><h3>You stay in control.</h3><p>Update your text, photos and the info your assistant uses yourself, or just ask us to do it.</p></div>
-<div class="promise rv2"><h3>Proof, every month.</h3><p>A plain-English report on visitors, conversions and what your assistant was asked, with clear next steps.</p></div>
-<div class="promise rv3"><h3>A real person to call.</h3><p>Reach Max or Hyland directly by email, or call <a href="tel:+16303330180" style="color: var(--bg)">+1 (630) 333-0180</a>.</p></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; margin-top: clamp(48px, 6vw, 80px)">
+<div class="promise rv" style="background: var(--raised); border-radius: 20px; padding: 28px"><h3>A fixed quote, up front.</h3><p>After your free call you get a fixed quote within [2 business days], so you know the price before any work starts.</p></div>
+<div class="promise rv2" style="background: var(--raised); border-radius: 20px; padding: 28px"><h3>Revisions until you love it.</h3><p>You review everything on a private preview link, and we keep refining it until you're completely happy.</p></div>
+<div class="promise rv3" style="background: var(--raised); border-radius: 20px; padding: 28px"><h3>An assistant that won't make things up.</h3><p>If it doesn't know the answer, it says so, takes the visitor's details and sends the question straight to you.</p></div>
+<div class="promise rv" style="background: var(--raised); border-radius: 20px; padding: 28px"><h3>You stay in control.</h3><p>Update your text, photos and the info your assistant uses yourself, or just ask us to do it.</p></div>
+<div class="promise rv2" style="background: var(--raised); border-radius: 20px; padding: 28px"><h3>Proof, every month.</h3><p>A plain-English report on visitors, conversions and what your assistant was asked, with clear next steps.</p></div>
+<div class="promise rv3" style="background: var(--raised); border-radius: 20px; padding: 28px"><h3>A real person to call.</h3><p>Reach Max or Hyland directly by email, or call <a href="tel:+16303330180" class="ac">+1 (630) 333-0180</a>.</p></div>
 </div>
 </div>
 </section>
 
 <!-- MONTHLY REPORTS -->
-<section id="reports" style="background: var(--bg); scroll-margin-top: 76px">
+<section id="reports" style="scroll-margin-top: 84px">
 <div class="wrap sec g12" style="align-items: center">
 <div class="c-l rv">
 <h2 class="h2">A growth report every month, in plain English.</h2>
-<p class="lead">A website should earn its keep. Every month you'll see how your site is performing, plus our recommendations for growing your business from here. Included with every website.</p>
+<p class="lead muted">A website should earn its keep. Every month you'll see how your site is performing, plus our recommendations for growing your business from here. Included with every website.</p>
 <ul style="list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-direction: column; gap: 10px">
-<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 5px"><path d="M20 6 9 17l-5-5"></path></svg>Visitors and clicks, and where they came from</li>
-<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 5px"><path d="M20 6 9 17l-5-5"></path></svg>Conversions: calls, form fills and bookings</li>
-<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 5px"><path d="M20 6 9 17l-5-5"></path></svg>Time spent on your site and your most popular pages</li>
-<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 5px"><path d="M20 6 9 17l-5-5"></path></svg>Top questions your AI assistant was asked</li>
-<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 5px"><path d="M20 6 9 17l-5-5"></path></svg>Clear next steps to bring in more customers</li>
+<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: var(--bg)"><path d="M20 6 9 17l-5-5"></path></svg>Visitors and clicks, and where they came from</li>
+<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: var(--bg)"><path d="M20 6 9 17l-5-5"></path></svg>Conversions: calls, form fills and bookings</li>
+<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: var(--bg)"><path d="M20 6 9 17l-5-5"></path></svg>Time spent on your site and your most popular pages</li>
+<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: var(--bg)"><path d="M20 6 9 17l-5-5"></path></svg>Top questions your AI assistant was asked</li>
+<li style="display: flex; gap: 12px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: var(--bg)"><path d="M20 6 9 17l-5-5"></path></svg>Clear next steps to bring in more customers</li>
 </ul>
 </div>
 
-<div class="c-r6 rv2" data-ui="" role="img" aria-label="Sample monthly report: 2,840 visitors up 18%, 96 conversions up 24%, 2 minutes 41 seconds average time on site up 12%, 312 AI chats up 31%, leads rising each week" style="background: #FFFFFF; border-radius: 16px; padding: clamp(20px, 2.4vw, 32px)">
+<div class="c-r6 rv2" data-ui="" role="img" aria-label="Sample monthly report: 2,840 visitors up 18%, 96 conversions up 24%, 2 minutes 41 seconds average time on site up 12%, 312 AI chats up 31%, leads rising each week" style="background: #FFFFFF; color: #0B1A2E; border-radius: 22px; padding: clamp(20px, 2.4vw, 32px)">
 <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px">
-<div><div style="font-size: 15px; color: #3B4A5E">Monthly report</div><div class="serif" style="font-size: 24px; font-weight: 500; line-height: 1.2">Your business, September</div></div>
-<span style="font-size: 15px; background: #EEF2F7; border-radius: 999px; padding: 3px 12px">Sample</span>
+<div><div style="font-size: 15px; color: #3B4A5E">Monthly report</div><div style="font-size: 23px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2">Your business, September</div></div>
+<span style="font-size: 14px; font-weight: 500; background: #EEF2F7; border-radius: 999px; padding: 3px 12px">Sample</span>
 </div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 24px; font-variant-numeric: tabular-nums">
-<div style="background: #EEF2F7; border-radius: 12px; padding: 14px 16px"><div style="font-size: 15px; color: #3B4A5E">Visitors</div><div style="display: flex; align-items: baseline; gap: 10px"><span class="serif" style="font-size: 34px; font-weight: 500; line-height: 1.2">2,840</span><span style="font-size: 15px; font-weight: 600; color: #166534">+18%</span></div></div>
-<div style="background: #EEF2F7; border-radius: 12px; padding: 14px 16px"><div style="font-size: 15px; color: #3B4A5E">Conversions</div><div style="display: flex; align-items: baseline; gap: 10px"><span class="serif" style="font-size: 34px; font-weight: 500; line-height: 1.2">96</span><span style="font-size: 15px; font-weight: 600; color: #166534">+24%</span></div></div>
-<div style="background: #EEF2F7; border-radius: 12px; padding: 14px 16px"><div style="font-size: 15px; color: #3B4A5E">Avg. time on site</div><div style="display: flex; align-items: baseline; gap: 10px"><span class="serif" style="font-size: 34px; font-weight: 500; line-height: 1.2">2m 41s</span><span style="font-size: 15px; font-weight: 600; color: #166534">+12%</span></div></div>
-<div style="background: #EEF2F7; border-radius: 12px; padding: 14px 16px"><div style="font-size: 15px; color: #3B4A5E">AI chats</div><div style="display: flex; align-items: baseline; gap: 10px"><span class="serif" style="font-size: 34px; font-weight: 500; line-height: 1.2">312</span><span style="font-size: 15px; font-weight: 600; color: #166534">+31%</span></div></div>
+<div style="background: #EEF2F7; border-radius: 14px; padding: 14px 16px"><div style="font-size: 15px; color: #3B4A5E">Visitors</div><div style="display: flex; align-items: baseline; gap: 10px"><span style="font-size: 32px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.2">2,840</span><span style="font-size: 15px; font-weight: 600; color: #166534">+18%</span></div></div>
+<div style="background: #EEF2F7; border-radius: 14px; padding: 14px 16px"><div style="font-size: 15px; color: #3B4A5E">Conversions</div><div style="display: flex; align-items: baseline; gap: 10px"><span style="font-size: 32px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.2">96</span><span style="font-size: 15px; font-weight: 600; color: #166534">+24%</span></div></div>
+<div style="background: #EEF2F7; border-radius: 14px; padding: 14px 16px"><div style="font-size: 15px; color: #3B4A5E">Avg. time on site</div><div style="display: flex; align-items: baseline; gap: 10px"><span style="font-size: 32px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.2">2m 41s</span><span style="font-size: 15px; font-weight: 600; color: #166534">+12%</span></div></div>
+<div style="background: #EEF2F7; border-radius: 14px; padding: 14px 16px"><div style="font-size: 15px; color: #3B4A5E">AI chats</div><div style="display: flex; align-items: baseline; gap: 10px"><span style="font-size: 32px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.2">312</span><span style="font-size: 15px; font-weight: 600; color: #166534">+31%</span></div></div>
 </div>
-<div style="margin-top: 16px; background: #EEF2F7; border-radius: 12px; padding: 16px">
+<div style="margin-top: 16px; background: #EEF2F7; border-radius: 14px; padding: 16px">
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 12px; font-size: 15px; color: #3B4A5E"><span>Leads by week</span><span>Calls, forms and bookings</span></div>
 <div aria-hidden="true" style="display: flex; align-items: flex-end; gap: 12px; height: 104px; margin-top: 14px">
-<div style="flex: 1; height: 45%; border-radius: 6px 6px 0 0; background: color-mix(in srgb, var(--bg) 45%, #EEF2F7)"></div>
-<div style="flex: 1; height: 58%; border-radius: 6px 6px 0 0; background: color-mix(in srgb, var(--bg) 65%, #EEF2F7)"></div>
-<div style="flex: 1; height: 72%; border-radius: 6px 6px 0 0; background: color-mix(in srgb, var(--bg) 85%, #EEF2F7)"></div>
-<div style="flex: 1; height: 100%; border-radius: 6px 6px 0 0; background: #0B1A2E"></div>
+<div style="flex: 1; height: 45%; border-radius: 8px 8px 0 0; background: color-mix(in srgb, var(--bg) 40%, #EEF2F7)"></div>
+<div style="flex: 1; height: 58%; border-radius: 8px 8px 0 0; background: color-mix(in srgb, var(--bg) 65%, #EEF2F7)"></div>
+<div style="flex: 1; height: 72%; border-radius: 8px 8px 0 0; background: var(--bg)"></div>
+<div style="flex: 1; height: 100%; border-radius: 8px 8px 0 0; background: #0B1A2E"></div>
 </div>
 <div aria-hidden="true" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 8px; font-size: 14px; color: #3B4A5E; text-align: center"><span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span></div>
 </div>
-<p style="margin: 16px 0 0; font-size: 16px; line-height: 1.5; background: color-mix(in srgb, var(--bg) 22%, #FFFFFF); border-radius: 12px; padding: 14px 16px"><span style="font-weight: 600">Next month:</span> visitors keep asking about weekend hours, so we'll add them to your homepage and assistant.</p>
+<p style="margin: 16px 0 0; font-size: 15px; line-height: 1.5; background: color-mix(in srgb, var(--bg) 22%, #FFFFFF); border-radius: 14px; padding: 14px 16px"><span style="font-weight: 600">Next month:</span> visitors keep asking about weekend hours, so we'll add them to your homepage and assistant.</p>
 </div>
 </div>
 </section>
 
 <!-- PRICING -->
-<section id="pricing" style="background: #FFFFFF; scroll-margin-top: 76px">
+<section id="pricing" class="card-sec pnl" style="scroll-margin-top: 84px">
 <div class="wrap sec">
 <h2 class="price-sent rv" aria-live="polite">{{pricePhrase}} <span class="pblock" style="font-variant-numeric: tabular-nums">{{estPrice}}</span> {{priceTail}}</h2>
-<div class="g12 rv2" style="margin-top: 48px; align-items: end">
+<div class="g12 rv2" style="margin-top: 44px; align-items: end">
 <div class="c-l">
-<p style="margin: 0; font-size: clamp(1.25rem, 1.1rem + .6vw, 1.5rem); line-height: 1.45"><span style="font-weight: 600">{{estLabel}}.</span> {{estSub}}.</p>
+<p style="margin: 0; font-size: clamp(1.15rem, 1.05rem + .5vw, 1.4rem); line-height: 1.45"><span style="font-weight: 600">{{estLabel}}.</span> <span class="muted">{{estSub}}.</span></p>
 <ul style="list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 8px 24px">
 <sc-for list="{{estItems}}" as="li" hint-placeholder-count="3">
-<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 5px"><path d="M20 6 9 17l-5-5"></path></svg>{{li.text}}</li>
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 4px; stroke: var(--bg)"><path d="M20 6 9 17l-5-5"></path></svg>{{li.text}}</li>
 </sc-for>
 </ul>
 </div>
 <div class="c-r" style="display: flex; flex-direction: column; align-items: flex-end; gap: 12px">
 <a class="btn" href="#contact">Get started <svg class="arr" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
-<p class="small" style="margin: 0; text-align: right">Final pricing is confirmed on your free call.</p>
+<p class="small muted" style="margin: 0; text-align: right">Final pricing is confirmed on your free call.</p>
 </div>
 </div>
 
-<div class="rv3" data-ui="" style="margin-top: 72px; background: #EEF2F7; border-radius: 16px; padding: clamp(20px, 3vw, 40px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 36px 48px">
+<div class="rv3" data-ui="" style="margin-top: 64px; background: #EEF2F7; color: #0B1A2E; border-radius: 22px; padding: clamp(20px, 3vw, 40px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 36px 48px">
 <div>
 <p id="pay-label" style="margin: 0; font-weight: 600">How would you like to pay?</p>
 <div role="group" aria-labelledby="pay-label" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px">
 <sc-for list="{{payOptions}}" as="o" hint-placeholder-count="2">
-<button class="opt" type="button" onClick="{{o.pick}}" aria-pressed="{{o.selected}}" style="padding: 14px 16px; {{o.style}}"><span style="display: block; font-weight: 600; font-size: 18px">{{o.label}}</span><span style="display: block; font-size: 15px; line-height: 1.4; margin-top: 2px">{{o.desc}}</span></button>
+<button class="opt" type="button" onClick="{{o.pick}}" aria-pressed="{{o.selected}}" style="padding: 14px 16px; {{o.style}}"><span style="display: block; font-weight: 600; font-size: 17px">{{o.label}}</span><span style="display: block; font-size: 14px; line-height: 1.4; margin-top: 2px">{{o.desc}}</span></button>
 </sc-for>
 </div>
 </div>
@@ -812,7 +849,7 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 <p id="pkg-label" style="margin: 0; font-weight: 600">What do you need?</p>
 <div role="group" aria-labelledby="pkg-label" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px">
 <sc-for list="{{pkgOptions}}" as="o" hint-placeholder-count="2">
-<button class="opt" type="button" onClick="{{o.pick}}" disabled="{{o.disabled}}" aria-pressed="{{o.selected}}" style="padding: 14px 16px; {{o.style}}"><span style="display: block; font-weight: 600; font-size: 18px">{{o.label}}</span><span style="display: block; font-size: 15px; line-height: 1.4; margin-top: 2px">{{o.desc}}</span><sc-if value="{{o.disabled}}" hint-placeholder-val="{{ false }}"><span style="display: block; font-size: 14px; margin-top: 6px">Upfront only</span></sc-if></button>
+<button class="opt" type="button" onClick="{{o.pick}}" disabled="{{o.disabled}}" aria-pressed="{{o.selected}}" style="padding: 14px 16px; {{o.style}}"><span style="display: block; font-weight: 600; font-size: 17px">{{o.label}}</span><span style="display: block; font-size: 14px; line-height: 1.4; margin-top: 2px">{{o.desc}}</span><sc-if value="{{o.disabled}}" hint-placeholder-val="{{ false }}"><span style="display: block; font-size: 13px; margin-top: 6px">Upfront only</span></sc-if></button>
 </sc-for>
 </div>
 </div>
@@ -820,14 +857,14 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 <p id="level-label" style="margin: 0; font-weight: 600">Build level</p>
 <div role="group" aria-labelledby="level-label" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px">
 <sc-for list="{{levelOptions}}" as="o" hint-placeholder-count="2">
-<button class="opt" type="button" onClick="{{o.pick}}" disabled="{{o.disabled}}" aria-pressed="{{o.selected}}" style="padding: 14px 16px; {{o.style}}"><span style="display: block; font-weight: 600; font-size: 18px">{{o.label}}</span><span style="display: block; font-size: 15px; line-height: 1.4; margin-top: 2px">{{o.desc}}</span></button>
+<button class="opt" type="button" onClick="{{o.pick}}" disabled="{{o.disabled}}" aria-pressed="{{o.selected}}" style="padding: 14px 16px; {{o.style}}"><span style="display: block; font-weight: 600; font-size: 17px">{{o.label}}</span><span style="display: block; font-size: 14px; line-height: 1.4; margin-top: 2px">{{o.desc}}</span></button>
 </sc-for>
 </div>
-<sc-if value="{{levelLocked}}" hint-placeholder-val="{{ false }}"><p class="small" style="margin: 10px 0 0">The monthly plan price depends only on company size.</p></sc-if>
+<sc-if value="{{levelLocked}}" hint-placeholder-val="{{ false }}"><p class="small" style="margin: 10px 0 0; color: #3B4A5E">The monthly plan price depends only on company size.</p></sc-if>
 </div>
 <div>
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><label for="calc-size" style="font-weight: 600">Company size</label><span class="serif" style="font-size: 24px; font-weight: 500">{{sizeLabel}}</span></div>
-<p class="small" style="margin: 2px 0 18px">{{sizeNote}}</p>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px"><label for="calc-size" style="font-weight: 600">Company size</label><span style="font-size: 22px; font-weight: 600">{{sizeLabel}}</span></div>
+<p class="small" style="margin: 2px 0 18px; color: #3B4A5E">{{sizeNote}}</p>
 <input id="calc-size" class="rng" type="range" min="0" max="2" step="1" value="{{size}}" onChange="{{setSize}}" disabled="{{sizeLocked}}" aria-valuetext="{{sizeLabel}}" style="width: 100%; background: linear-gradient(to right, #0B1A2E {{sizePct}}%, #C9D2DE {{sizePct}}%); {{sizeRangeStyle}}">
 <div aria-hidden="true" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 12px; font-size: 15px">
 <span style="text-align: left; {{tickSmall}}">Small</span>
@@ -840,52 +877,32 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 </section>
 
 <!-- FAQ -->
-<section id="faq" style="background: var(--bg); scroll-margin-top: 76px">
-<div class="wrap sec" style="padding-top: clamp(72px, 8vw, 128px)">
-<div class="qa rv" style="padding-top: 0">
-<h2 class="q" style="color: #1E3A5F; font-weight: 400">Common questions</h2>
-</div>
-<div class="qa rv">
-<h3 class="q">What does the AI assistant actually do?</h3>
-<p class="a">It sits in the corner of your website and answers visitors' questions about your services, prices, hours and anything else you tell it. When someone's interested, it takes their details or points them to your booking calendar.</p>
-</div>
-<div class="qa rv">
-<h3 class="q">What happens if it doesn't know the answer?</h3>
-<p class="a">It won't make things up. It lets the visitor know someone will get back to them, grabs their contact details and sends the question your way.</p>
-</div>
-<div class="qa rv">
-<h3 class="q">How quickly can my site go live?</h3>
-<p class="a">In as little as 7 days. Bigger projects can take a little longer, and you'll get a clear timeline before we start.</p>
-</div>
-<div class="qa rv">
-<h3 class="q">Can I make changes myself after launch?</h3>
-<p class="a">Yes. We'll show you how to update text, photos and the info your assistant uses. If you'd rather not, our care plan has you covered.</p>
-</div>
-<div class="qa rv">
-<h3 class="q">What's in the monthly report?</h3>
-<p class="a">Visitors and clicks, conversions like calls, form fills and bookings, how long people stay on your site, your most popular pages and the top questions your AI assistant was asked. Every report ends with clear recommendations for what we'll improve next.</p>
-</div>
-<div class="qa rv">
-<h3 class="q">How much will it cost?</h3>
-<p class="a">Websites start at $1,500, and website plus AI chatbot packages start at $2,000 with a small monthly retainer. Prefer no upfront cost? Our monthly plan starts at $500 a month. The calculator above shows your exact price.</p>
-</div>
+<section id="faq" style="scroll-margin-top: 84px">
+<div class="wrap sec">
+<div class="qa rv" style="padding-top: 0"><h2 class="q muted" style="font-weight: 500">Common questions</h2></div>
+<div class="qa rv"><h3 class="q">What does the AI assistant actually do?</h3><p class="a">It sits in the corner of your website and answers visitors' questions about your services, prices, hours and anything else you tell it. When someone's interested, it takes their details or points them to your booking calendar.</p></div>
+<div class="qa rv"><h3 class="q">What happens if it doesn't know the answer?</h3><p class="a">It won't make things up. It lets the visitor know someone will get back to them, grabs their contact details and sends the question your way.</p></div>
+<div class="qa rv"><h3 class="q">How quickly can my site go live?</h3><p class="a">In as little as 7 days. Bigger projects can take a little longer, and you'll get a clear timeline before we start.</p></div>
+<div class="qa rv"><h3 class="q">Can I make changes myself after launch?</h3><p class="a">Yes. We'll show you how to update text, photos and the info your assistant uses. If you'd rather not, our care plan has you covered.</p></div>
+<div class="qa rv"><h3 class="q">What's in the monthly report?</h3><p class="a">Visitors and clicks, conversions like calls, form fills and bookings, how long people stay on your site, your most popular pages and the top questions your AI assistant was asked. Every report ends with clear recommendations for what we'll improve next.</p></div>
+<div class="qa rv"><h3 class="q">How much will it cost?</h3><p class="a">Websites start at $1,500, and website plus AI chatbot packages start at $2,000 with a small monthly retainer. Prefer no upfront cost? Our monthly plan starts at $500 a month. The calculator above shows your exact price.</p></div>
 </div>
 </section>
 
 <!-- BOOKING: CALENDAR + SMART FORM -->
-<section id="contact" style="background: #FFFFFF; scroll-margin-top: 76px">
+<section id="contact" class="card-sec pnl" style="scroll-margin-top: 84px">
 <div class="wrap sec">
 <div class="g12" style="align-items: end">
-<div class="c-l rv"><h2 class="h2">Book your free strategy call.</h2></div>
-<div class="c-r rv2"><p style="margin: 0">Pick a time that suits you, tell us a little about your business, and we'll show up with ideas.</p></div>
+<div class="c-l rv"><h2 class="h2">Book your free <span class="ac">strategy call.</span></h2></div>
+<div class="c-r rv2"><p class="muted" style="margin: 0">Pick a time that suits you, tell us a little about your business, and we'll show up with ideas.</p></div>
 </div>
 
-<div style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 56px; align-items: stretch">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 56px; align-items: stretch">
 
 <!-- Calendar -->
-<div class="rv2" data-ui="" style="flex: 1 1 380px; min-width: 0; background: #EEF2F7; border-radius: 16px; padding: clamp(20px, 2.4vw, 32px)">
+<div class="rv2" data-ui="" style="flex: 1 1 380px; min-width: 0; background: #EEF2F7; color: #0B1A2E; border-radius: 22px; padding: clamp(20px, 2.4vw, 32px)">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px">
-<div><p style="margin: 0; font-weight: 600">Pick a day</p><div class="serif" style="font-size: 26px; font-weight: 500; line-height: 1.2" aria-live="polite">{{monthLabel}}</div></div>
+<div><p style="margin: 0; font-weight: 600">Pick a day</p><div style="font-size: 24px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2" aria-live="polite">{{monthLabel}}</div></div>
 <div style="display: flex; gap: 8px">
 <button class="opt" type="button" aria-label="Previous month" onClick="{{prevMonth}}" disabled="{{prevDisabled}}" style="width: 48px; height: 48px; background: #FFFFFF; color: #0B1A2E; display: flex; align-items: center; justify-content: center; opacity: {{prevOpacity}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg></button>
 <button class="opt" type="button" aria-label="Next month" onClick="{{nextMonth}}" disabled="{{nextDisabled}}" style="width: 48px; height: 48px; background: #FFFFFF; color: #0B1A2E; display: flex; align-items: center; justify-content: center; opacity: {{nextOpacity}}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></button>
@@ -898,7 +915,7 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 <sc-for list="{{cells}}" as="cell" hint-placeholder-count="35">
 <sc-if value="{{cell.blank}}" hint-placeholder-val="{{ false }}"><span></span></sc-if>
 <sc-if value="{{cell.day}}" hint-placeholder-val="{{ true }}">
-<button class="day" type="button" onClick="{{cell.pick}}" disabled="{{cell.disabled}}" aria-label="{{cell.aria}}" aria-pressed="{{cell.selected}}" style="font: inherit; font-size: 17px; aspect-ratio: 1 / 1; min-height: 40px; border: 0; border-radius: 10px; display: flex; align-items: center; justify-content: center; {{cell.style}}">{{cell.label}}</button>
+<button class="day" type="button" onClick="{{cell.pick}}" disabled="{{cell.disabled}}" aria-label="{{cell.aria}}" aria-pressed="{{cell.selected}}" style="font: inherit; font-size: 16px; aspect-ratio: 1 / 1; min-height: 40px; border: 0; border-radius: 12px; display: flex; align-items: center; justify-content: center; {{cell.style}}">{{cell.label}}</button>
 </sc-if>
 </sc-for>
 </div>
@@ -907,63 +924,63 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 <sc-if value="{{hasDate}}" hint-placeholder-val="{{ false }}">
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 8px; margin-top: 12px">
 <sc-for list="{{slots}}" as="sl" hint-placeholder-count="5">
-<button class="opt pop" type="button" onClick="{{sl.pick}}" aria-pressed="{{sl.selected}}" style="font-size: 16px; padding: 10px 8px; min-height: 48px; text-align: center; {{sl.style}}">{{sl.label}}</button>
+<button class="opt pop" type="button" onClick="{{sl.pick}}" aria-pressed="{{sl.selected}}" style="font-size: 15px; font-weight: 500; padding: 10px 8px; min-height: 48px; text-align: center; {{sl.style}}">{{sl.label}}</button>
 </sc-for>
 </div>
 </sc-if>
 <sc-if value="{{noDate}}" hint-placeholder-val="{{ true }}">
-<p style="margin: 8px 0 0; font-size: 17px">Choose a weekday above to see open times.</p>
+<p style="margin: 8px 0 0; font-size: 16px">Choose a weekday above to see open times.</p>
 </sc-if>
 <p class="small" style="margin: 14px 0 0; color: #3B4A5E">Times shown in [Central Time]. Calls last about [20] minutes.</p>
 </div>
 </div>
 
 <!-- Smart form -->
-<div class="rv3" data-ui="" style="flex: 1 1 440px; min-width: 0; background: #EEF2F7; border-radius: 16px; padding: clamp(20px, 2.4vw, 32px)">
+<div class="rv3" data-ui="" style="flex: 1 1 440px; min-width: 0; background: #EEF2F7; color: #0B1A2E; border-radius: 22px; padding: clamp(20px, 2.4vw, 32px)">
 <sc-if value="{{notSent}}" hint-placeholder-val="{{ true }}">
 <div style="display: flex; flex-direction: column; gap: 18px">
 <p style="margin: 0; font-weight: 600">Tell us about you</p>
-<div style="display: flex; align-items: center; gap: 12px; background: #FFFFFF; border-radius: 12px; padding: 14px 16px">
+<div style="display: flex; align-items: center; gap: 12px; background: #FFFFFF; border-radius: 14px; padding: 14px 16px">
 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path></svg>
-<div aria-live="polite" style="font-size: 17px">{{bookingSummary}}</div>
+<div aria-live="polite" style="font-size: 16px">{{bookingSummary}}</div>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px">
 <div style="display: flex; flex-direction: column; gap: 6px">
-<label for="f-name" style="font-size: 17px">Name</label>
+<label for="f-name" style="font-size: 16px; font-weight: 500">Name</label>
 <input id="f-name" class="field" type="text" autocomplete="name" placeholder="Jane Smith" value="{{name}}" onChange="{{setName}}" aria-invalid="{{nameErr}}" style="border-color: {{nameBorder}}">
-<sc-if value="{{nameErr}}" hint-placeholder-val="{{ false }}"><span style="font-size: 15px; color: #B42318">Please add your name.</span></sc-if>
+<sc-if value="{{nameErr}}" hint-placeholder-val="{{ false }}"><span style="font-size: 14px; color: #B42318">Please add your name.</span></sc-if>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
-<label for="f-email" style="font-size: 17px">Email</label>
+<label for="f-email" style="font-size: 16px; font-weight: 500">Email</label>
 <input id="f-email" class="field" type="email" autocomplete="email" placeholder="jane@company.com" value="{{email}}" onChange="{{setEmail}}" onBlur="{{touchEmail}}" aria-invalid="{{emailErr}}" style="border-color: {{emailBorder}}">
-<sc-if value="{{emailErr}}" hint-placeholder-val="{{ false }}"><span style="font-size: 15px; color: #B42318">That email doesn't look quite right.</span></sc-if>
-<sc-if value="{{emailOk}}" hint-placeholder-val="{{ false }}"><span style="font-size: 15px; color: #166534">Looks good.</span></sc-if>
+<sc-if value="{{emailErr}}" hint-placeholder-val="{{ false }}"><span style="font-size: 14px; color: #B42318">That email doesn't look quite right.</span></sc-if>
+<sc-if value="{{emailOk}}" hint-placeholder-val="{{ false }}"><span style="font-size: 14px; color: #166534">Looks good.</span></sc-if>
 </div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
-<label for="f-url" style="font-size: 17px">Current website <span style="color: #3B4A5E">(optional)</span></label>
+<label for="f-url" style="font-size: 16px; font-weight: 500">Current website <span style="color: #3B4A5E; font-weight: 400">(optional)</span></label>
 <input id="f-url" class="field" type="url" placeholder="https://yourwebsite.com">
 </div>
 <div>
-<p id="interest-label" style="margin: 0; font-size: 17px">What are you interested in?</p>
+<p id="interest-label" style="margin: 0; font-size: 16px; font-weight: 500">What are you interested in?</p>
 <div role="group" aria-labelledby="interest-label" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px">
 <sc-for list="{{interests}}" as="it" hint-placeholder-count="4">
-<button class="opt" type="button" onClick="{{it.pick}}" aria-pressed="{{it.selected}}" style="font-size: 16px; border-radius: 999px; padding: 9px 16px; min-height: 44px; {{it.style}}">{{it.label}}</button>
+<button class="opt" type="button" onClick="{{it.pick}}" aria-pressed="{{it.selected}}" style="font-size: 15px; font-weight: 500; border-radius: 999px; padding: 9px 16px; min-height: 44px; {{it.style}}">{{it.label}}</button>
 </sc-for>
 </div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
-<label for="f-msg" style="font-size: 17px">Your message</label>
+<label for="f-msg" style="font-size: 16px; font-weight: 500">Your message</label>
 <textarea id="f-msg" class="field" rows="4" placeholder="{{msgPlaceholder}}" style="resize: vertical"></textarea>
 </div>
-<button class="btn" type="button" onClick="{{submit}}" style="width: 100%">{{submitLabel}}</button>
+<button class="btn btn-d" type="button" onClick="{{submit}}" style="width: 100%">{{submitLabel}}</button>
 <p class="small" style="margin: 0; text-align: center; color: #3B4A5E">No spam, ever. We reply within one business day.</p>
 </div>
 </sc-if>
 <sc-if value="{{sent}}" hint-placeholder-val="{{ false }}">
 <div class="pop" style="text-align: center; padding: 56px 12px; display: flex; flex-direction: column; align-items: center; gap: 16px; height: 100%; justify-content: center">
-<span style="width: 72px; height: 72px; border-radius: 50%; background: var(--bg); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0B1A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>
-<h3 class="serif" style="margin: 0; font-size: 36px; font-weight: 400; letter-spacing: -0.02em; line-height: 1.1">You're all set, {{firstName}}!</h3>
+<span style="width: 72px; height: 72px; border-radius: 50%; background: var(--bg); display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0A1324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>
+<h3 class="h3" style="font-size: 32px">You're all set, {{firstName}}!</h3>
 <p style="margin: 0; max-width: 26rem">{{sentDetail}}</p>
 </div>
 </sc-if>
@@ -973,35 +990,37 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 </section>
 
 <!-- DIRECT CONTACT -->
-<section id="reach" class="inv" style="background: #0B1A2E; color: var(--bg); scroll-margin-top: 76px">
+<section id="reach" style="scroll-margin-top: 84px; padding-top: 16px">
+<div class="card-sec acc">
 <div class="wrap sec">
-<h2 class="serif rv" style="margin: 0; font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem); font-weight: 400; line-height: 1.3; color: #FFFFFF; max-width: 30ch">Rather write or call? Reach the team directly.</h2>
-<div style="display: flex; flex-direction: column; gap: clamp(40px, 5vw, 72px); margin-top: clamp(48px, 6vw, 96px)">
+<h2 class="rv" style="margin: 0; font-size: clamp(1.3rem, 1.05rem + .9vw, 1.8rem); font-weight: 500; line-height: 1.3; max-width: 30ch">Rather write or call? Reach the team directly.</h2>
+<div style="display: flex; flex-direction: column; gap: clamp(40px, 5vw, 64px); margin-top: clamp(40px, 5vw, 80px)">
 <div class="rv2">
-<p style="margin: 0 0 14px; color: #FFFFFF; font-size: 19px; display: flex; align-items: center; gap: 14px"><span class="av" aria-hidden="true">MB</span>Max Bis</p>
-<a class="contact-mail serif" href="mailto:maxymilian.bis@sterlinggrowthsystems.com" style="display: block; font-size: clamp(1.9rem, .6rem + 5.2vw, 5.6rem); font-weight: 300; line-height: 1; letter-spacing: -0.035em; overflow-wrap: anywhere">maxymilian.bis@<br>sterlinggrowthsystems.com</a>
+<p style="margin: 0 0 14px; font-size: 18px; font-weight: 500; display: flex; align-items: center; gap: 14px"><span class="av" aria-hidden="true">MB</span>Max Bis</p>
+<a class="mail" href="mailto:maxymilian.bis@sterlinggrowthsystems.com" style="display: block; font-size: clamp(1.7rem, .5rem + 4.6vw, 5rem); font-weight: 600; line-height: 1.02; letter-spacing: -0.045em; overflow-wrap: anywhere">maxymilian.bis@<br>sterlinggrowthsystems.com</a>
 </div>
 <div class="rv3">
-<p style="margin: 0 0 14px; color: #FFFFFF; font-size: 19px; display: flex; align-items: center; gap: 14px"><span class="av" aria-hidden="true">HS</span>Hyland Sterling</p>
-<a class="contact-mail serif" href="mailto:hyland.sterling@sterlinggrowthsystems.com" style="display: block; font-size: clamp(1.9rem, .6rem + 5.2vw, 5.6rem); font-weight: 300; line-height: 1; letter-spacing: -0.035em; overflow-wrap: anywhere">hyland.sterling@<br>sterlinggrowthsystems.com</a>
+<p style="margin: 0 0 14px; font-size: 18px; font-weight: 500; display: flex; align-items: center; gap: 14px"><span class="av" aria-hidden="true">HS</span>Hyland Sterling</p>
+<a class="mail" href="mailto:hyland.sterling@sterlinggrowthsystems.com" style="display: block; font-size: clamp(1.7rem, .5rem + 4.6vw, 5rem); font-weight: 600; line-height: 1.02; letter-spacing: -0.045em; overflow-wrap: anywhere">hyland.sterling@<br>sterlinggrowthsystems.com</a>
 </div>
 </div>
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: clamp(56px, 6vw, 96px); font-size: 19px">
-<a class="contact-mail" href="tel:+16303330180" style="text-decoration: underline">Call us: +1 (630) 333-0180</a>
-<span style="color: #FFFFFF">We reply within one business day.</span>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: clamp(48px, 6vw, 88px); font-size: 18px; font-weight: 500">
+<a class="mail" href="tel:+16303330180" style="text-decoration: underline">Call us: +1 (630) 333-0180</a>
+<span>We reply within one business day.</span>
+</div>
 </div>
 </div>
 </section>
 
 <!-- FOOTER -->
-<footer style="background: var(--bg); overflow: hidden">
+<footer style="overflow: hidden">
 <div class="wrap g12" style="padding-top: clamp(80px, 9vw, 144px)">
 <div class="c-l">
-<p class="serif" style="margin: 0; font-size: clamp(2.5rem, 1rem + 4.6vw, 5.5rem); font-weight: 400; line-height: 1; letter-spacing: -0.035em">Let's build yours.</p>
-<p style="margin: 20px 0 0; max-width: 36ch">High-converting websites with an AI assistant built in, plus monthly reports that help you grow.</p>
+<p style="margin: 0; font-size: clamp(2.4rem, 1rem + 4.2vw, 5rem); font-weight: 600; line-height: 1; letter-spacing: -0.045em">Let's build yours.</p>
+<p class="muted" style="margin: 20px 0 0; max-width: 36ch">High-converting websites with an AI assistant built in, plus monthly reports that help you grow.</p>
 <a class="btn" href="#contact" style="margin-top: 28px">Book a free call <svg class="arr" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
 </div>
-<nav aria-label="Footer" class="c-r" style="display: flex; flex-wrap: wrap; gap: 24px 64px; font-size: 18px">
+<nav aria-label="Footer" class="c-r" style="display: flex; flex-wrap: wrap; gap: 24px 64px; font-size: 17px">
 <div style="display: flex; flex-direction: column; gap: 8px">
 <a class="flink" href="#services">Services</a>
 <a class="flink" href="#process">Process</a>
@@ -1016,7 +1035,7 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 </div>
 </nav>
 </div>
-<div class="wrap" style="margin-top: clamp(64px, 8vw, 128px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 15px">
+<div class="wrap muted" style="margin-top: clamp(64px, 8vw, 128px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 15px">
 <span>© 2026 Sterling Growth Systems. All rights reserved.</span>
 <span style="display: flex; gap: 20px"><a class="flink" href="#top">Privacy Policy</a><a class="flink" href="#top">Terms of Service</a></span>
 </div>
@@ -1025,7 +1044,7 @@ input[type=range].rng::-moz-range-thumb{width:18px;height:18px;border-radius:50%
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8DB6EA","options":["#8DB6EA","#BCD4F2","#6FA0E0","#FF7A1F"]},"$preview":{"width":1440,"height":18400}}'>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#6AA7FF","options":["#6AA7FF","#8AB8FF","#4F8EF7","#5EEAD4"]},"$preview":{"width":1440,"height":17200}}'>
 // Pricing
 const PRICES = { site: { standard: 1500, advanced: 2000 }, ai: { standard: 2000, advanced: 2500 } };
 const RETAINER = [250, 400, 500];
@@ -1063,8 +1082,8 @@ const PROJECTS = [{ tab: "Landscaping" }, { tab: "HVAC" }];
 
 const WHYS = [
   { title: "Open around the clock.", desc: "Your assistant answers at 2am on a Sunday, so no question goes unanswered.", band: "#FFFFFF", ink: "#0B1A2E" },
-  { title: "Made for mobile.", desc: "Most people find you on their phone. Your site will look and work great there.", band: "#0B1A2E", ink: "#FFFFFF" },
-  { title: "Fast and secure.", desc: "Slow sites lose visitors. We keep yours light, quick and protected.", band: "#EEF2F7", ink: "#0B1A2E" },
+  { title: "Made for mobile.", desc: "Most people find you on their phone. Your site will look and work great there.", band: "var(--bg)", ink: "#0A1324" },
+  { title: "Fast and secure.", desc: "Slow sites lose visitors. We keep yours light, quick and protected.", band: "#22344F", ink: "#FFFFFF" },
   { title: "Easy to update.", desc: "Change your hours, prices or photos yourself, or just ask us to do it.", band: "#FFFFFF", ink: "#0B1A2E" }
 ];
 
@@ -1134,8 +1153,8 @@ class Component extends DCLogic {
       const on = !!s.why[i];
       return {
         title: w.title, desc: w.desc, on,
-        bandStyle: on ? "background: " + w.band + "; color: " + w.ink : "background: transparent; color: #1E3A5F",
-        swStyle: on ? "background: " + w.ink : "background: rgba(11,26,46,.18)",
+        bandStyle: on ? "background: " + w.band + "; color: " + w.ink : "background: #111D33; color: #A9B8CE",
+        swStyle: on ? "background: " + w.ink : "background: rgba(255,255,255,.16)",
         knobStyle: on ? "background: " + w.band : "background: #FFFFFF",
         toggle: () => this.setState((st) => { const next = st.why.slice(); next[i] = !next[i]; return { why: next }; })
       };
@@ -1144,7 +1163,7 @@ class Component extends DCLogic {
     // Portfolio
     const projectTabs = PROJECTS.map((p, i) => ({
       label: p.tab, selected: i === s.project,
-      style: i === s.project ? "background: #0B1A2E; color: #FFFFFF" : "background: #EEF2F7; color: #0B1A2E",
+      style: i === s.project ? "background: var(--bg); color: #0A1324" : "background: transparent; color: #E8EEF8",
       pick: () => this.setState({ project: i, split: 50 })
     }));
 
@@ -1225,7 +1244,7 @@ class Component extends DCLogic {
     const firstName = s.name.trim().split(" ")[0] || "there";
 
     return {
-      accent: this.props.accent ?? "#8DB6EA",
+      accent: this.props.accent ?? "#6AA7FF",
       msgsRev, chips, typing: s.typing, draft: s.draft,
       setDraft: (e) => this.setState({ draft: e.target.value }),
       onKey: (e) => { if (e.key === "Enter") { e.preventDefault(); this.ask(this.state.draft); } },
